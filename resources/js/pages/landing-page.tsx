@@ -1,7 +1,17 @@
 function LandingPage() {
     return (
         <>
-            <h1 className="text-3xl">Monaco Locação</h1>
+            <header>
+                <nav>
+                    <ul>
+                        <li>logo</li>
+                        <li>Nossos carros</li>
+                        <li>Sobre a Mônaco Locação</li>
+                        <li>RECEBEA UMA PROPOSTA</li>
+                        <li>RECEBEA UMA PROPOSTA</li>
+                    </ul>
+                </nav>
+            </header>
         </>
     );
 }
