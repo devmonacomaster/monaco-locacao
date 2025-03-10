@@ -19,7 +19,7 @@ createInertiaApp({
     setup({ el, App, props }) {
         const root = createRoot(el);
 
-        root.render(<App {...props} />);
+        root.render(<App {...props} />); // Renderiza o componente 'App' com as propriedades 'props'
     },
     // Animação de carregamento
     progress: {
