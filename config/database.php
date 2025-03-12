@@ -31,7 +31,6 @@ return [
 
     'connections' => [
 
-        'connections' => [
             'oracle' => [
                 'driver' => 'oracle',
                 'tns' => env('DB_TNS', ''),
@@ -44,7 +43,6 @@ return [
                 'prefix' => '',
                 'prefix_schema' => env('DB_SCHEMA', ''),
             ],
-        ],
 
         'sqlite' => [
             'driver' => 'sqlite',
