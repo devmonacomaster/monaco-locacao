@@ -2,7 +2,7 @@ function LandingPage() {
     return (
         <>
             <header>
-                <nav className="flex items-center justify-end gap-4">
+                <nav className="flex items-center justify-center gap-4">
                     <ul>
                         <li>logo</li>
                         <li>Nossos carros</li>
