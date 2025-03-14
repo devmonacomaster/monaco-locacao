@@ -1,9 +1,11 @@
-function FacebookIcon() {
+type IconProps = {
+    className?: string;
+  };
+
+  function InstagramLogo({ className = "" }: IconProps) {
     return (
-      <div className="flex items-center">
-          <img src="/images/instagram.svg" alt="Monaco" className="h-8 w-auto" />
-      </div>
+      <img src="/images/instagram.svg" alt="Logo do instagram" className={`h-4 ${className}`} />
     );
   }
 
-  export default FacebookIcon;
+  export default InstagramLogo;

@@ -5,7 +5,7 @@ use Inertia\Inertia;
 
 Route::get('/', function () {
     return Inertia::render('landing-page');
-})->name('home'); // Define um alias para a rota, a qual pode ser chamada com interpolação de JS
+})->name('home');
 
 Route::get('/welcome', function () {
     return Inertia::render('welcome');

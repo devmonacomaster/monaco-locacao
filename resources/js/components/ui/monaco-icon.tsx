@@ -1,9 +1,11 @@
-function MonacoIcon() {
-    return (
-        <div className="flex items-center">
-            <img src="/images/monaco-logo.svg" alt="Monaco" className="h-8 w-auto" />
-        </div>
-    );
-}
+type IconProps = {
+    className?: string;
+  };
 
-export default MonacoIcon;
+  function MonacoLogo({ className = "" }: IconProps) {
+    return (
+      <img src="/images/monaco-logo.svg" alt="Logo da monaco" className={`h-4 ${className}`} />
+    );
+  }
+
+  export default MonacoLogo;
