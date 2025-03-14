@@ -1,11 +1,17 @@
 import MonacoHeader from "@/components/monaco-header";
-import Banner from "@/components/ui/monaco-banner";
+import Carousel from "@/components/ui/monaco-carousel";
+
+const images = [
+    '/images/banner.webp',
+    '/images/banner.webp',
+    '/images/banner.webp',
+];
 
 function LandingPage() {
     return (
         <div>
             <MonacoHeader />
-           <Banner />
+            <Carousel images={images} />
         </div>
     );
 }
