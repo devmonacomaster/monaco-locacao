@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import FacebookIcon from '@/components/ui/facebook-icon';
-import InstagramLogo from '@/components/ui/instagram-icon';
-import MonacoLogo from '@/components/ui/monaco-icon';
-import ArrowHeader from '@/components/ui/arrow-header';
+import FacebookIcon from '@/components/ui/icon-facebook';
+import InstagramLogo from '@/components/ui/icon-instagram';
+import MonacoLogo from '@/components/ui/icon-monaco';
+import ArrowHeader from '@/components/ui/icon-arrow-header';
 import { Menu, X } from 'lucide-react';
 
 function MonacoHeader() {

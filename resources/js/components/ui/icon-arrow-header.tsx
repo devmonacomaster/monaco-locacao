@@ -4,7 +4,7 @@ type IconProps = {
 
   function ArrowHeader({ className = "" }: IconProps) {
     return (
-      <img src="/images/arrow_header.svg" alt="Seta Laranja apontando para a direita" className={`h-4 ${className}`} />
+      <img src="/images/arrow_header.svg" className={`h-4 ${className}`} />
     );
   }
 

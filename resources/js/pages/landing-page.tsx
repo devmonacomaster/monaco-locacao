@@ -1,5 +1,6 @@
 import MonacoHeader from "@/components/monaco-header";
 import Carousel from "@/components/ui/monaco-carousel";
+import SectionOne from "@/components/ui/icon-left-arrow";
 
 const images = [
     '/images/banner-1.webp',
@@ -12,6 +13,7 @@ function LandingPage() {
         <div>
             <MonacoHeader />
             <Carousel images={images} />
+            <SectionOne />
         </div>
     );
 }
