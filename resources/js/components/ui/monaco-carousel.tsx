@@ -20,60 +20,40 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
   };
 
   return (
-    <div
-      style={{
-        position: 'relative',
-        width: '100%',
-        maxWidth: '600px',
-        margin: 'auto',
-        overflow: 'hidden'
-      }}
-    >
+    <div className="relative w-full h-120 overflow-hidden">
       <img
         src={images[currentIndex]}
         alt={`Slide ${currentIndex}`}
-        style={{ width: '100%', height: 'auto', display: 'block' }}
+        className="w-full h-120 object-cover transition-opacity duration-500"
       />
 
+      {/* Botão Anterior */}
       <button
         onClick={prevSlide}
-        style={{
-          position: 'absolute',
-          top: '50%',
-          left: '10px',
-          transform: 'translateY(-50%)',
-          backgroundColor: 'rgba(0, 0, 0, 0.5)',
-          color: '#fff',
-          border: 'none',
-          borderRadius: '50%',
-          width: '40px',
-          height: '40px',
-          cursor: 'pointer',
-          outline: 'none'
-        }}
+        className="absolute top-1/2 left-5 -translate-y-1/2 bg-black/50 text-white p-3 rounded-full hover:bg-black/70 transition"
       >
         &#10094;
       </button>
 
+      {/* Botão Próximo */}
       <button
         onClick={nextSlide}
-        style={{
-          position: 'absolute',
-          top: '50%',
-          right: '10px',
-          transform: 'translateY(-50%)',
-          backgroundColor: 'rgba(0, 0, 0, 0.5)',
-          color: '#fff',
-          border: 'none',
-          borderRadius: '50%',
-          width: '40px',
-          height: '40px',
-          cursor: 'pointer',
-          outline: 'none'
-        }}
+        className="absolute top-1/2 right-5 -translate-y-1/2 bg-black/50 text-white p-3 rounded-full hover:bg-black/70 transition"
       >
         &#10095;
       </button>
+
+      {/* Indicadores */}
+      <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex gap-2">
+        {images.map((_, index) => (
+          <span
+            key={index}
+            className={`w-4 h-4 rounded-full transition-all ${
+              index === currentIndex ? 'bg-white' : 'bg-gray-400'
+            }`}
+          ></span>
+        ))}
+      </div>
     </div>
   );
 };
