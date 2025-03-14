@@ -48,7 +48,6 @@ function MonacoHeader() {
                     </ul>
                 </nav>
             </header>
-            <img src='/images/banner_1.webp' />
         </>
     );
 }
