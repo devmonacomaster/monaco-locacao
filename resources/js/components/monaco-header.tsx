@@ -9,7 +9,7 @@ function MonacoHeader() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <header className="flex justify-between items-center h-20 bg-white w-full px-6 md:px-8 relative z-50">
+        <header className="flex justify-between items-center h-24 bg-white w-full px-6 md:px-8 relative z-50">
             {/* Logo */}
             <a href={route('home')} aria-label="Página inicial">
                 <MonacoLogo className="h-9" />
@@ -37,7 +37,7 @@ function MonacoHeader() {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <FacebookIcon className="h-5" />
+                            <FacebookIcon className="h-6" />
                         </a>
                     </li>
                     <li>
@@ -47,23 +47,23 @@ function MonacoHeader() {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <InstagramLogo className="h-5" />
+                            <InstagramLogo className="h-6" />
                         </a>
                     </li>
                     <li>
-                        <a href={route('home')} className="text-black font-bold">
+                        <a href={route('home')} className="text-black font-bold text-xl">
                             Nossos Carros
                         </a>
                     </li>
                     <li>
-                        <a href={route('home')} className="text-black font-bold">
+                        <a href={route('home')} className="text-black font-bold text-xl">
                             Sobre a Mônaco Locação
                         </a>
                     </li>
                     <li>
                         <a
                             href={route('home')}
-                            className="text-[#fe6c12] font-extrabold flex items-center space-x-2"
+                            className="text-[#fe6c12] font-extrabold flex items-center space-x-2 text-xl"
                         >
                             <span>RECEBA UMA PROPOSTA</span>
                             <ArrowHeader className="h-10" />

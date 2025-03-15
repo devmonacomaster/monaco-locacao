@@ -3,15 +3,25 @@ import SectionLine from '@/components/ui/icon-line';
 function SectionOne() {
     return (
         <>
-            <div className="w-full h-150 bg-white">
-                <section className="flex flex-row justify-around">
-                    <p className="text-black text-2xl"><b>OPÇÃO DE ADQUIRIR AO TÉRMINO</b></p>
-                    <SectionLine className="h-13"/>
-                    <p className="text-black text-2xl"><b>NÃO COMPROMETE O CADASTRO DO BACEN</b></p>
-                    <SectionLine className="h-13"/>
-                    <p className="text-black text-2xl"><b>MENSALIDADES FIXAS</b></p>
-                    <SectionLine className="h-13"/>
-                    <p className="text-black text-2xl"><b>SUPORTE ESPECIALIZADO</b></p>
+            <div className="w-full h-60 bg-white flex flex-col justify-center items-center">
+                <section className="flex flex-row justify-around gap-x-8">
+                    <p className="text-black text-2xl font-bold text-center whitespace-pre-line">
+                        OPÇÃO DE ADQUIRIR{"\n"}AO TÉRMINO
+                    </p>
+                    <SectionLine className="h-15" />
+                    <p className="text-black text-2xl font-bold text-center whitespace-pre-line">
+                        NÃO COMPROMETE{"\n"}O CADASTRO DO BACEN
+                    </p>
+                    <SectionLine className="h-15" />
+                    <div className="flex flex-col justify-center h-full">
+                        <p className="text-black text-2xl font-bold text-center self-center">
+                            MENSALIDADES FIXA
+                        </p>
+                    </div>
+                    <SectionLine className="h-15" />
+                    <p className="text-black text-2xl font-bold text-center whitespace-pre-line">
+                        SUPORTE{"\n"}ESPECIALIZADO
+                    </p>
                 </section>
             </div>
         </>
