@@ -51,19 +51,19 @@ function MonacoHeader() {
                         </a>
                     </li>
                     <li>
-                        <a href={route('home')} className="text-black font-bold text-xl">
+                        <a href={route('home')} className="text-black font-black text-xl">
                             Nossos Carros
                         </a>
                     </li>
                     <li>
-                        <a href={route('home')} className="text-black font-bold text-xl">
+                        <a href={route('home')} className="text-black font-black text-xl">
                             Sobre a Mônaco Locação
                         </a>
                     </li>
                     <li>
                         <a
                             href={route('home')}
-                            className="text-[#fe6c12] font-extrabold flex items-center space-x-2 text-xl"
+                            className="text-[#fe6c12] font-black flex items-center space-x-2 text-xl"
                         >
                             <span>RECEBA UMA PROPOSTA</span>
                             <ArrowHeader className="h-10" />
