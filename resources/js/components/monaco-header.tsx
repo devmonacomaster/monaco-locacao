@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import FacebookIcon from '@/components/ui/icon-facebook';
 import InstagramLogo from '@/components/ui/icon-instagram';
-import MonacoLogo from '@/components/ui/icon-monaco';
+import MonacoLogo from '@/components/ui/icon-monaco-logo';
 import ArrowHeader from '@/components/ui/icon-arrow-header';
 import { Menu, X } from 'lucide-react';
 

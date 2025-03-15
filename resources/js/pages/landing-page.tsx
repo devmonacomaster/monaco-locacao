@@ -1,6 +1,6 @@
 import MonacoHeader from "@/components/monaco-header";
 import Carousel from "@/components/ui/monaco-carousel";
-import SectionOne from "@/components/ui/icon-left-arrow";
+import SectionOne from "@/components/monaco-section-one";
 
 const images = [
     '/images/banner-1.webp',
