@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import FacebookIcon from '@/components/ui/icon-facebook';
+import FacebookLogo from '@/components/ui/icon-facebook';
 import InstagramLogo from '@/components/ui/icon-instagram';
 import MonacoLogo from '@/components/ui/icon-monaco-logo';
 import ArrowHeader from '@/components/ui/icon-arrow-header';
@@ -37,7 +37,7 @@ function MonacoHeader() {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <FacebookIcon className="h-6" />
+                            <FacebookLogo className="h-6" />
                         </a>
                     </li>
                     <li>
@@ -51,7 +51,7 @@ function MonacoHeader() {
                         </a>
                     </li>
                     <li>
-                        <a href={route('home')} className="text-black font-black text-xl">
+                        <a href={route('dashboard')} className="text-black font-black text-xl">
                             Nossos Carros
                         </a>
                     </li>

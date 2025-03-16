@@ -2,10 +2,10 @@ type IconProps = {
     className?: string;
   };
 
-  function FacebookIcon({ className = "" }: IconProps) {
+  function FacebookLogo({ className = "" }: IconProps) {
     return (
       <img src="/images/facebook.svg" alt="Facebook Logo" className={`h-4 ${className}`} />
     );
   }
 
-  export default FacebookIcon;
+  export default FacebookLogo;
