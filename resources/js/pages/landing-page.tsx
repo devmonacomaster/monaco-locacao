@@ -13,9 +13,9 @@ function LandingPage() {
     return (
         <div>
             <MonacoHeader />
-            <Carousel images={images} />
+            {/* <Carousel images={images} />
             <SectionOne />
-            <SectionTwo />
+            <SectionTwo /> */}
         </div>
     );
 }

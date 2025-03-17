@@ -1,22 +1,22 @@
-/* Estilos gerais do cabeçalho */
+/* General Header Styles */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 96px;
+    height: 6rem; /* More flexible height */
     background-color: white;
     width: 100%;
-    padding: 0 24px;
+    padding: 0 1.5rem;
     position: relative;
     z-index: 50;
 }
 
 /* Logo */
 .logo {
-    height: 36px;
+    height: 2.5rem;
 }
 
-/* Botão do menu (mobile) */
+/* Mobile Menu Button */
 .menu-button {
     display: none;
     background: none;
@@ -26,78 +26,168 @@
 }
 
 .icon {
-    width: 32px;
-    height: 32px;
+    width: 2rem;
+    height: 2rem;
 }
 
-/* Estilos do menu */
+/* Navigation */
 .nav {
     display: flex;
     align-items: center;
 }
 
-/* Lista de navegação */
+/* Navigation List */
 .nav-list {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 1.5rem;
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-/* Ícones das redes sociais */
+/* Social Icons */
 .social-icon {
-    height: 24px;
+    height: 1.5rem;
 }
 
-/* Links da navegação */
+.social-icons-div {
+    display: flex;
+    padding: 1rem; /* Space around the icons */
+    gap: 1rem; /* Smaller gap between them */
+}
+
+/* Navigation Links */
 .nav-link {
     color: black;
     font-weight: 900;
-    font-size: 20px;
+    font-size: 1.25rem;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-/* Botão especial "Receba uma Proposta" */
+.nav-link:hover {
+    color: #fe6c12;
+}
+
+/* CTA Button */
 .cta {
     color: #fe6c12;
     font-weight: 900;
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-size: 20px;
+    gap: 0.5rem;
+    font-size: 1.25rem;
     text-decoration: none;
 }
 
 .arrow-icon {
-    height: 40px;
+    height: 2.5rem;
 }
 
-/* Responsividade */
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .header {
+        padding: 0 1rem;
+        height: 5rem;
+    }
+
+    .nav-list {
+        gap: 1rem;
+    }
+
+    .nav-link,
+    .cta {
+        font-size: 1.1rem;
+    }
+
+    .social-icon {
+        height: 1.25rem;
+    }
+
+    .logo {
+        height: 2.25rem;
+    }
+}
+
+/* Tablet & Mobile */
 @media (max-width: 768px) {
+    .header {
+        padding: 0 1rem;
+        height: 4.5rem;
+    }
+
+    /* Show menu button on mobile */
     .menu-button {
         display: block;
     }
 
+    /* Mobile menu */
     .nav {
         position: absolute;
-        top: 80px;
+        top: 4.5rem;
         left: 0;
         width: 100%;
         background-color: white;
-        padding: 16px;
+        padding: 1rem;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         display: none;
         flex-direction: column;
+        align-items: center;
+        transition: all 0.3s ease-in-out;
     }
 
+    /* Opened menu */
     .nav.open {
         display: flex;
     }
 
+    /* Adjust navigation list for mobile */
     .nav-list {
         flex-direction: column;
-        gap: 16px;
+        gap: 1rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-link,
+    .cta {
+        font-size: 1rem;
+    }
+
+    .arrow-icon {
+        height: 2rem;
+    }
+}
+
+@media (max-width: 888px) {
+    .nav-link {
+        font-size: 0.9rem;
+    }
+
+    .cta,
+    .arrow-icon {
+        font-size: 0.9rem;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 480px) {
+    .header {
+        padding: 0 0.5rem;
+        height: 4rem;
+    }
+
+    .nav {
+        top: 4rem;
+    }
+
+    .nav-list {
+        gap: 0.8rem;
+    }
+
+    .nav-link,
+    .cta {
+        font-size: 0.9rem;
     }
 }

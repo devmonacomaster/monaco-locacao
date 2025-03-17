@@ -28,26 +28,28 @@ function MonacoHeader() {
             {/* Menu mobile */}
             <nav className={`nav ${isOpen ? 'open' : ''}`}>
                 <ul className="nav-list">
-                    <li>
-                        <a
-                            href="https://www.facebook.com/GrupoMonacoOficial/?locale=pt_BR"
-                            aria-label="Facebook"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <FacebookLogo className="social-icon" />
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="https://www.instagram.com/monacolocacao/"
-                            aria-label="Instagram"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <InstagramLogo className="social-icon" />
-                        </a>
-                    </li>
+                    <div className='social-icons-div'>
+                        <li>
+                            <a
+                                href="https://www.facebook.com/GrupoMonacoOficial/?locale=pt_BR"
+                                aria-label="Facebook"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <FacebookLogo className="social-icon" />
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://www.instagram.com/monacolocacao/"
+                                aria-label="Instagram"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <InstagramLogo className="social-icon" />
+                            </a>
+                        </li>
+                    </div>
                     <li>
                         <a href={route('dashboard')} className="nav-link">
                             Nossos Carros
