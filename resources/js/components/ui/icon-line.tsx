@@ -4,7 +4,7 @@ type IconProps = {
 
   function SectionLine({ className = "" }: IconProps) {
     return (
-      <img src="/images/line-section.svg" className={`h-4 ${className}`} />
+      <img src="/images/line-section.svg" className={`${className}`} />
     );
   }
 

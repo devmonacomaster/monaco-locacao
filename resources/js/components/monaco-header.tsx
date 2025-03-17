@@ -4,32 +4,30 @@ import InstagramLogo from '@/components/ui/icon-instagram';
 import MonacoLogo from '@/components/ui/icon-monaco-logo';
 import ArrowHeader from '@/components/ui/icon-arrow-header';
 import { Menu, X } from 'lucide-react';
+import './monaco-header.css';
 
 function MonacoHeader() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <header className="flex justify-between items-center h-24 bg-white w-full px-6 md:px-8 relative z-50">
+        <header className="header">
             {/* Logo */}
             <a href={route('home')} aria-label="Página inicial">
-                <MonacoLogo className="h-9" />
+                <MonacoLogo className="logo" />
             </a>
 
             {/* Botão do menu mobile */}
             <button
-                className="md:hidden text-black"
+                className="menu-button"
                 onClick={() => setIsOpen(!isOpen)}
                 aria-label="Abrir menu"
             >
-                {isOpen ? <X className="h-8 w-8" /> : <Menu className="h-8 w-8" />}
+                {isOpen ? <X className="icon" /> : <Menu className="icon" />}
             </button>
 
             {/* Menu mobile */}
-            <nav
-                className={`fixed top-20 left-0 w-full bg-white p-6 shadow-md md:shadow-none md:p-0 md:static md:w-auto md:flex md:items-center transition-all z-50 ${isOpen ? 'block' : 'hidden'
-                    }`}
-            >
-                <ul className="flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-6">
+            <nav className={`nav ${isOpen ? 'open' : ''}`}>
+                <ul className="nav-list">
                     <li>
                         <a
                             href="https://www.facebook.com/GrupoMonacoOficial/?locale=pt_BR"
@@ -37,7 +35,7 @@ function MonacoHeader() {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <FacebookLogo className="h-6" />
+                            <FacebookLogo className="social-icon" />
                         </a>
                     </li>
                     <li>
@@ -47,26 +45,23 @@ function MonacoHeader() {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <InstagramLogo className="h-6" />
+                            <InstagramLogo className="social-icon" />
                         </a>
                     </li>
                     <li>
-                        <a href={route('dashboard')} className="text-black font-black text-xl">
+                        <a href={route('dashboard')} className="nav-link">
                             Nossos Carros
                         </a>
                     </li>
                     <li>
-                        <a href={route('home')} className="text-black font-black text-xl">
+                        <a href={route('home')} className="nav-link">
                             Sobre a Mônaco Locação
                         </a>
                     </li>
                     <li>
-                        <a
-                            href={route('home')}
-                            className="text-[#fe6c12] font-black flex items-center space-x-2 text-xl"
-                        >
+                        <a href={route('home')} className="cta">
                             <span>RECEBA UMA PROPOSTA</span>
-                            <ArrowHeader className="h-10" />
+                            <ArrowHeader className="arrow-icon" />
                         </a>
                     </li>
                 </ul>

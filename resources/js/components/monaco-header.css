@@ -1,0 +1,103 @@
+/* Estilos gerais do cabeçalho */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 96px;
+    background-color: white;
+    width: 100%;
+    padding: 0 24px;
+    position: relative;
+    z-index: 50;
+}
+
+/* Logo */
+.logo {
+    height: 36px;
+}
+
+/* Botão do menu (mobile) */
+.menu-button {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: black;
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+}
+
+/* Estilos do menu */
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+/* Lista de navegação */
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Ícones das redes sociais */
+.social-icon {
+    height: 24px;
+}
+
+/* Links da navegação */
+.nav-link {
+    color: black;
+    font-weight: 900;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+/* Botão especial "Receba uma Proposta" */
+.cta {
+    color: #fe6c12;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.arrow-icon {
+    height: 40px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .menu-button {
+        display: block;
+    }
+
+    .nav {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        padding: 16px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        display: none;
+        flex-direction: column;
+    }
+
+    .nav.open {
+        display: flex;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 16px;
+    }
+}

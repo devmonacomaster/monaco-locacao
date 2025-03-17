@@ -4,7 +4,7 @@ type IconProps = {
 
   function LeftArrow({ className = "" }: IconProps) {
     return (
-      <img src="/images/left-arrow.svg" className={`h-4 ${className}`} />
+      <img src="/images/left-arrow.svg" className={`${className}`} />
     );
   }
 

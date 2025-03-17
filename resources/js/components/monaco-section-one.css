@@ -1,0 +1,51 @@
+/* Container principal */
+.section-one {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+}
+
+/* Lista de itens */
+.section-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 24px;
+    list-style: none;
+    text-align: center;
+}
+
+.section-item {
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    white-space: pre-line;
+}
+
+/* Linha separadora */
+.section-line {
+    height: 40px;
+    display: none;
+}
+
+/* Responsividade */
+@media (min-width: 768px) {
+    .section-list {
+        flex-direction: row;
+        gap: 32px;
+    }
+
+    .section-item {
+        font-size: 24px;
+    }
+
+    .section-line {
+        display: block;
+        height: 60px;
+    }
+}

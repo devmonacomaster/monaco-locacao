@@ -4,7 +4,7 @@ type IconProps = {
 
   function FacebookLogo({ className = "" }: IconProps) {
     return (
-      <img src="/images/facebook.svg" alt="Facebook Logo" className={`h-4 ${className}`} />
+      <img src="/images/facebook.svg" alt="Facebook Logo" className={`${className}`} />
     );
   }
 
