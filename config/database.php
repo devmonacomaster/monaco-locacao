@@ -32,19 +32,20 @@ return [
     'connections' => [
 
         'oracle' => [
-            'driver'        => 'oracle',
-            'tns'           => "(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=" . env('DB_HOST', '') . ")(PORT=" . env('DB_PORT', '1521') . "))(CONNECT_DATA=(SERVICE_NAME=" . env('DB_SERVICE_NAME', '') . ")))",
-            'host'          => env('DB_HOST', ''),
-            'port'          => env('DB_PORT', '1521'),
-            'database'      => env('DB_DATABASE', ''),
-            'service_name'  => env('DB_SERVICE_NAME', ''),
-            'username'      => env('DB_USERNAME', ''),
-            'password'      => env('DB_PASSWORD', ''),
-            'charset'       => env('DB_CHARSET', 'AL32UTF8'),
-            'prefix_schema' => 'MONACO',
-            'prefix'        => '',
-            'strict'        => false,
+            'driver' => 'oracle',
+            'tns' => "(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=" . env('DB_HOST', '') . ")(PORT=" . env('DB_PORT', '1521') . "))(CONNECT_DATA=(SERVICE_NAME=" . env('DB_SERVICE_NAME', '') . ")))",
+            'host' => env('DB_HOST', ''),
+            'port' => env('DB_PORT', '1521'),
+            'database' => env('DB_DATABASE', ''),
+            'service_name' => env('DB_SERVICE_NAME', ''),
+            'username' => env('DB_USERNAME', ''),
+            'password' => env('DB_PASSWORD', ''),
+            'charset' => env('DB_CHARSET', 'AL32UTF8'),
+            'prefix_schema' => 'MONACO_LOCACAO',  
+            'prefix' => '',
+            'strict' => false,
         ],
+
 
         'sqlite' => [
             'driver' => 'sqlite',
