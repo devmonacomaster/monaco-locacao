@@ -11,20 +11,21 @@ function MonacoHeader() {
 
     return (
         <header className="header">
-            {/* Logo */}
+
             <a href={route('home')} aria-label="Página inicial">
                 <MonacoLogo className="logo" />
             </a>
 
-            {/* Botão do menu mobile */}
-            <button className="menu-button" onClick={() => setIsOpen(!isOpen)} aria-label="Abrir menu">
+            <button
+                className="menu-button"
+                onClick={() => setIsOpen(!isOpen)}
+                aria-label="Abrir menu">
                 {isOpen ? <X className="icon" /> : <Menu className="icon" />}
             </button>
 
-            {/* Menu mobile */}
             <nav className={`nav ${isOpen ? 'open' : ''}`}>
                 <ul className="nav-list">
-                    {/* Redes sociais - Links diretamente no componente */}
+
                     <div className='social-icons-container'>
                         <li>
                             <a
@@ -47,11 +48,15 @@ function MonacoHeader() {
                             </a>
                         </li>
                     </div>
-                    {/* Links de navegação */}
+
                     <li><a href={route('home')} className="nav-link">Nossos Carros</a></li>
                     <li><a href={route('home')} className="nav-link">Sobre a Mônaco Locação</a></li>
-                    {/* Call to Action */}
-                    <li><a href={route('home')} className="cta"><span>RECEBA UMA PROPOSTA</span><ArrowHeader className="arrow-icon" /></a></li>
+                    <li>
+                        <a href={route('home')} className="cta">
+                            <span>RECEBA UMA PROPOSTA</span>
+                            <ArrowHeader className="arrow-icon" />
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </header>
