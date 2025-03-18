@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './monaco-carousel.css';
+import '../../../css/components/ui/monaco-carousel.css';
 
 interface CarouselProps {
   images: string[];
