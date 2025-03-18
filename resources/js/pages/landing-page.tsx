@@ -15,7 +15,7 @@ function LandingPage() {
             <MonacoHeader />
             <Carousel images={images} />
             <SectionOne />
-            <SectionTwo />
+            {/* <SectionTwo /> */}
         </div>
     );
 }

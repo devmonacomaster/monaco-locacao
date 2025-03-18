@@ -4,7 +4,7 @@ type IconProps = {
 
   function MonacoLogo({ className = "" }: IconProps) {
     return (
-      <img src="/images/monaco-logo.svg" alt="Logo da monaco" className={`h-4 ${className}`} />
+      <img src="/images/monaco-logo.svg" alt="Logo da monaco" className={`${className}`} />
     );
   }
 
