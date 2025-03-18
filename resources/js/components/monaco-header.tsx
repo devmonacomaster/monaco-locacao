@@ -51,7 +51,7 @@ function MonacoHeader() {
                         </li>
                     </div>
                     <li>
-                        <a href={route('dashboard')} className="nav-link">
+                        <a href={route('home')} className="nav-link">
                             Nossos Carros
                         </a>
                     </li>

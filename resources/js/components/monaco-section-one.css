@@ -3,7 +3,6 @@
     width: 100%;
     background-color: white;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 16px;
@@ -14,38 +13,140 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    gap: 24px;
+    gap: 16px;
     list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+/* Estilo dos itens como cards no mobile */
+.section-item {
+    padding: 16px;
+    color: #000000;
+    font-size: 16px;
+    font-weight: bold;
     text-align: center;
 }
 
-.section-item {
-    color: black;
-    font-size: 18px;
-    font-weight: bold;
-    white-space: pre-line;
+.section-item:hover {
+    transform: scale(1.02);
 }
 
-/* Linha separadora */
+/* Linha separadora oculta no mobile */
 .section-line {
-    height: 40px;
     display: none;
 }
 
-/* Responsividade */
-@media (min-width: 768px) {
+/* --------------------------- */
+/* 📱 Celulares Pequenos: 320px - 480px */
+@media (max-width: 480px) {
+    .section-one {
+        background-color: #ffffff;
+    }
+    .vertical-line {
+        width: 35%;
+        height: 2px;
+        background-color: black;
+    }
+    .horizontal-line {
+        display: none;
+    }
+    .section-item {
+        font-size: 18px;
+    }
+}
+
+/* 📱 Celulares Médios: 481px - 767px */
+@media (min-width: 481px) and (max-width: 767px) {
+    .section-one {
+        background-color: #310b5f;
+    }
+    .section-item {
+        font-size: 15px;
+    }
+}
+
+/* --------------------------- */
+/* 💻 Tablets: 768px - 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .section-one {
+        background-color: aquamarine;
+    }
+
     .section-list {
         flex-direction: row;
+        align-items: center;
+        justify-content: center;
         gap: 32px;
     }
 
     .section-item {
-        font-size: 24px;
+        background-color: transparent;
+        box-shadow: none;
+        font-size: 18px;
+        padding: 0;
     }
 
     .section-line {
         display: block;
         height: 60px;
+    }
+}
+
+/* --------------------------- */
+/* 💻 Laptops Pequenos: 1025px - 1280px */
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .section-one {
+        background-color: #518b6f;
+        height: 9rem;
+    }
+
+    .section-list {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 32px;
+        line-height: 1.5rem;
+    }
+
+    .section-item {
+        background-color: transparent;
+        box-shadow: none;
+        font-size: 18px;
+        padding: 0;
+    }
+
+    .section-line {
+        display: block;
+        height: 60px;
+    }
+}
+
+/* 🖥️ Desktops Grandes: 1281px+ */
+@media (min-width: 1281px) {
+    .section-one {
+        background-color: #dbf48a;
+        height: 9rem;
+    }
+
+    .section-list {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 32px;
+    }
+
+    .section-item {
+        background-color: transparent;
+        box-shadow: none;
+        font-size: 18px;
+        font-weight: 900;
+        padding: 0;
+    }
+
+    .section-line {
+        display: block;
+        height: 3.5rem;
     }
 }
