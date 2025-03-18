@@ -46,7 +46,6 @@ return [
             'strict' => false,
         ],
 
-
         'sqlite' => [
             'driver' => 'sqlite',
             'url' => env('DB_URL'),
