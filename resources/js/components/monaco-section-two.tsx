@@ -3,7 +3,6 @@ import "../../css/components/monaco-section-two.css"
 function SectionTwo() {
     return (
         <article className="section-two">
-            <div className="section-two-content">
                 {/* Texto à esquerda */}
                 <div className="section-two-text">
                     <h3>
@@ -14,12 +13,11 @@ function SectionTwo() {
                 </div>
 
                 {/* Título à direita */}
-                <h1>
-                    SOLUÇÕES <br />
-                    <span className="highlight">AUTOMOTIVAS</span> <br />
-                    INTELIGENTES
-                </h1>
-            </div>
+                <div className="section-two-title">
+                    <p>SOLUÇÕES</p>
+                    <p className="highlight">AUTOMOTIVAS</p>
+                    <p>INTELIGENTES</p>
+                </div>
         </article>
     );
 }

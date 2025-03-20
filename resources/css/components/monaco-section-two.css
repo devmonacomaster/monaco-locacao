@@ -1,66 +1,67 @@
-/* Container principal */
 .section-two {
-    width: 100%;
     background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
 }
 
-/* Conteúdo principal */
-.section-two-content {
-    width: 100%;
-    max-width: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-/* Texto à esquerda */
 .section-two-text {
-    max-width: 100%;
-    margin-bottom: 24px;
-}
-
-.section-two-text h3 {
-    color: black;
-    font-size: 18px;
-    font-weight: 500;
-}
-
-/* Título à direita */
-.section-two h1 {
-    font-size: 28px;
-    font-weight: 900;
     color: black;
 }
 
-/* Destaque no título */
+.section-two-title {
+    color: black;
+}
+
 .highlight {
     color: #134e4a;
 }
 
-/* Responsividade */
-@media (min-width: 768px) {
-    .section-two-content {
-        max-width: 60%;
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: left;
+/* Desktop */
+@media (min-width: 992px) {
+    .section-two {
+        background-color: salmon;
+    }
+}
+
+/* Tablet */
+@media (min-width: 628px) and (max-width: 992px) {
+    .section-two {
+        background-color: rgb(146, 210, 82);
     }
 
     .section-two-text {
-        max-width: 55%;
-        margin-bottom: 0;
+        margin-bottom: 2.5rem;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 500;
+        margin-left: 3.5rem;
+        margin-right: 3.5rem;
+        background-color: rgb(210, 165, 82);
     }
 
-    .section-two-text h3 {
-        font-size: 24px;
+    .section-two-title {
+        text-align: right;
+        margin-right: 5.0rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+        background-color: rgb(188, 170, 138);
+    }
+}
+
+/* Mobile */
+@media (min-width: 0px) and (max-width: 628px) {
+
+    .section-two-text {
+        margin-bottom: 2.5rem;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 500;
+        margin-left: 3.5rem;
+        margin-right: 3.5rem;
     }
 
-    .section-two h1 {
-        font-size: 40px;
+    .section-two-title {
+        text-align: right;
+        margin-right: 5.0rem;
+        font-size: 1.5rem;
+        font-weight: bold;
     }
 }
