@@ -52,7 +52,7 @@
     }
 
     /* Centraliza a porra do carrossel */
-    .carousel {
+    .gallery {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -60,7 +60,7 @@
         width: 100%;
     }
 
-    .carousel-buttons{
+    .gallery-buttons {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -68,7 +68,8 @@
     }
 
     /* Botões do carrossel arredondados */
-    .carousel-button-gallery {
+    .gallery-button {
+        margin-top: 1rem;
         background: black;
         border: none;
         font-size: 1rem;
@@ -80,7 +81,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: transform 0.2s ease, background 0.3s;
+
     }
 
     /* Contêiner da imagem */
@@ -111,5 +112,31 @@
         margin-top: 5px;
         font-size: 14px;
         color: #555;
+    }
+
+    .gallery-indicators {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 10px;
+        position: relative;
+        /* Garante que os indicadores fiquem dentro do carrossel */
+        z-index: 10;
+        /* Mantém os indicadores acima da imagem */
+    }
+
+    .gallery-indicator {
+        width: 12px;
+        height: 12px;
+        background-color: #ddd;
+        /* Cor mais clara para teste */
+        border-radius: 50%;
+        transition: background-color 0.3s ease-in-out, transform 0.2s;
+        cursor: pointer;
+    }
+
+    .gallery-indicator.active {
+        background-color: #000000;
+        transform: scale(1.3);
     }
 }

@@ -63,8 +63,7 @@ function Gallery() {
                 </ul>
 
                 {/* Imagem do veículo */}
-                <div className="carousel">
-
+                <div className="gallery">
                     <div className="image-container">
                         <img
                             src={filteredCars[currentIndex].image}
@@ -73,12 +72,25 @@ function Gallery() {
                         <h3>{filteredCars[currentIndex].name}</h3>
                         <p>{filteredCars[currentIndex].details}</p>
                     </div>
+                </div>
 
+                {/* Indicadores do carrossel */}
+                <div className="gallery-indicators">
+                    {filteredCars.map((_, index) => (
+                        <span
+                            key={index}
+                            className={`gallery-indicator ${index === currentIndex ? "active" : ""}`}
+                            onClick={() => setCurrentIndex(index)}
+                        ></span>
+                    ))}
                 </div>
-                <div className="carousel-buttons">
-                    <button onClick={prevSlide} className="carousel-button-gallery prev">&#10094;</button>
-                    <button onClick={nextSlide} className="carousel-button-gallery next">&#10095;</button>
+
+                {/* Botões de navegação */}
+                <div className="gallery-buttons">
+                    <button onClick={prevSlide} className="gallery-button prev">&#10094;</button>
+                    <button onClick={nextSlide} className="gallery-button next">&#10095;</button>
                 </div>
+
             </div>
         </>
     );
