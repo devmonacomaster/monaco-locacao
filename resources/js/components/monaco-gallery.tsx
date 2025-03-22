@@ -1,7 +1,14 @@
 import { useState } from "react";
 import "../../css/components/monaco-gallery.css";
 
-// Dados dos veículos e caminhões
+type Vehicle = {
+    name: string;
+    image: string;
+    details: string;
+};
+
+type Category = "todos" | "veiculos" | "caminhoes";
+
 const carsData = {
     veiculos: [
         { name: "RAMPAGE LARAMIE", image: "/images/cars/rampage_laramie.webp", details: "Diesel - 24/24" },
@@ -22,78 +29,61 @@ const carsData = {
     ]
 };
 
-// Criar a categoria "todos" dinamicamente
-const carsDataWithAll = { todos: [...carsData.veiculos, ...carsData.caminhoes], ...carsData };
+const carsDataWithAll: Record<Category, Vehicle[]> = {
+    todos: [...carsData.veiculos, ...carsData.caminhoes],
+    ...carsData,
+};
 
 function Gallery() {
-    const [selectedCategory, setSelectedCategory] = useState<keyof typeof carsDataWithAll>("todos");
+    const [selectedCategory, setSelectedCategory] = useState<Category>("todos");
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const filteredCars = carsDataWithAll[selectedCategory];
+    const totalItems = filteredCars.length;
 
-    const nextSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % filteredCars.length);
-    };
-
-    const prevSlide = () => {
-        setCurrentIndex((prevIndex) =>
-            prevIndex === 0 ? filteredCars.length - 1 : prevIndex - 1
-        );
+    const changeSlide = (direction: 1 | -1) => {
+        setCurrentIndex((prev) => (prev + direction + totalItems) % totalItems);
     };
 
     return (
-        <>
-            <div className="container">
-                <h1 className="title">Explore o nosso portfólio</h1>
+        <div className="container">
+            <h1 className="title">Explore o nosso portfólio</h1>
 
-                {/* Categorias */}
-                <ul className="list-option">
-                    {Object.keys(carsDataWithAll).map((category) => (
-                        <li
-                            key={category}
-                            className={selectedCategory === category ? "active" : ""}
-                            onClick={() => {
-                                setSelectedCategory(category as keyof typeof carsDataWithAll);
-                                setCurrentIndex(0); // Resetar índice ao mudar categoria
-                            }}
-                        >
-                            {category.charAt(0).toUpperCase() + category.slice(1)}
-                        </li>
-                    ))}
-                </ul>
-
-                {/* Imagem do veículo */}
-                <div className="gallery">
-                    <div className="image-container">
-                        <img
-                            src={filteredCars[currentIndex].image}
-                            alt={filteredCars[currentIndex].name}
-                        />
-                        <h3>{filteredCars[currentIndex].name}</h3>
-                        <p>{filteredCars[currentIndex].details}</p>
-                    </div>
-                </div>
-
-                {/* Indicadores do carrossel */}
-                <div className="gallery-indicators">
-                    <div
-                        className="gallery-indicator"
-                        style={{
-                            width: `${100 / filteredCars.length}%`, // Cada item ocupa a fração certa da barra
-                            transform: `translateX(${(currentIndex / filteredCars.length) * 900}%)`
+            <ul className="list-option">
+                {Object.keys(carsDataWithAll).map((category) => (
+                    <li
+                        key={category}
+                        className={selectedCategory === category ? "active" : ""}
+                        onClick={() => {
+                            setSelectedCategory(category as Category);
+                            setCurrentIndex(0);
                         }}
-                    ></div>
+                    >
+                        {category.charAt(0).toUpperCase() + category.slice(1)}
+                    </li>
+                ))}
+            </ul>
+
+            <div className="gallery">
+                <div className="image-container">
+                    <img src={filteredCars[currentIndex].image} alt={filteredCars[currentIndex].name} />
+                    <h3>{filteredCars[currentIndex].name}</h3>
+                    <p>{filteredCars[currentIndex].details}</p>
                 </div>
-
-
-                {/* Botões de navegação */}
-                <div className="gallery-buttons">
-                    <button onClick={prevSlide} className="gallery-button prev">&#10094;</button>
-                    <button onClick={nextSlide} className="gallery-button next">&#10095;</button>
-                </div>
-
             </div>
-        </>
+
+            <div className="gallery-indicators">
+                <div
+                    className="gallery-indicator"
+                    style={{ width: `${100 / totalItems}%`, transform: `translateX(${(currentIndex / totalItems) * 900}%)` }}
+                ></div>
+            </div>
+
+            <div className="gallery-buttons">
+                <button onClick={() => changeSlide(-1)} className="gallery-button prev">&#10094;</button>
+                <button onClick={() => changeSlide(1)} className="gallery-button next">&#10095;</button>
+            </div>
+        </div>
     );
 }
 

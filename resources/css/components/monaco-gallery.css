@@ -1,13 +1,10 @@
 @media (min-width: 992px) {}
 
-
 @media (min-width: 628px) and (max-width: 992px) {}
-
-
 
 @media (min-width: 0px) and (max-width: 628px) {
     .container {
-        background-color: #ffffff;
+        background-color: #fff;
         color: black;
         height: 35rem;
         display: flex;
@@ -16,7 +13,6 @@
         justify-content: center;
     }
 
-    /* Estiliza o título */
     .title {
         text-align: center;
         font-size: 1.4rem;
@@ -24,12 +20,11 @@
         margin-bottom: 1rem;
     }
 
-    /* Estiliza a lista de categorias */
     .list-option {
-        font-size: 0.90rem;
+        font-size: 0.9rem;
         font-weight: 900;
         display: flex;
-        gap: 1.1rem;
+        /* gap: 0.0rem; */
         padding-bottom: 1rem;
     }
 
@@ -39,7 +34,6 @@
         position: relative;
     }
 
-    /* Linha sublinhando a categoria ativa */
     .list-option li.active::after {
         content: "";
         display: block;
@@ -51,12 +45,10 @@
         left: 0;
     }
 
-    /* Centraliza a porra do carrossel */
     .gallery {
         display: flex;
         justify-content: center;
         align-items: center;
-        /* gap: 20px; */
         width: 100%;
     }
 
@@ -67,24 +59,21 @@
         gap: 1rem;
     }
 
-    /* Botões do carrossel arredondados */
     .gallery-button {
         margin-top: 1rem;
         background: black;
         border: none;
         font-size: 1rem;
         cursor: pointer;
-        color: #ffffff;
+        color: #fff;
         width: 2rem;
         height: 2rem;
         border-radius: 23%;
         display: flex;
         align-items: center;
         justify-content: center;
-
     }
 
-    /* Contêiner da imagem */
     .image-container {
         width: 320px;
         display: flex;
@@ -93,21 +82,18 @@
         text-align: center;
     }
 
-    /* Imagem responsiva e padronizada */
     .image-container img {
         max-width: 100%;
         max-height: 200px;
         object-fit: contain;
     }
 
-    /* Nome do veículo */
     .image-container h3 {
         margin-top: 10px;
         font-size: 18px;
         font-weight: bold;
     }
 
-    /* Detalhes do veículo */
     .image-container p {
         margin-top: 5px;
         font-size: 14px;
@@ -128,9 +114,8 @@
         position: absolute;
         height: 100%;
         width: 80%;
-        background-color: #cccc00;
+        background-color: #cc0;
         transition: transform 0.3s ease-in-out;
         border-radius: 3px;
     }
-
 }
