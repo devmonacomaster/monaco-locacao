@@ -42,41 +42,45 @@ function Gallery() {
     };
 
     return (
-        <div className="container">
-            <h1 className="title">Explore o nosso portfólio</h1>
+        <>
+            <div className="container">
+                <h1 className="title">Explore o nosso portfólio</h1>
 
-            {/* Categorias */}
-            <ul className="list-option">
-                {Object.keys(carsDataWithAll).map((category) => (
-                    <li
-                        key={category}
-                        className={selectedCategory === category ? "active" : ""}
-                        onClick={() => {
-                            setSelectedCategory(category as keyof typeof carsDataWithAll);
-                            setCurrentIndex(0); // Resetar índice ao mudar categoria
-                        }}
-                    >
-                        {category.charAt(0).toUpperCase() + category.slice(1)}
-                    </li>
-                ))}
-            </ul>
+                {/* Categorias */}
+                <ul className="list-option">
+                    {Object.keys(carsDataWithAll).map((category) => (
+                        <li
+                            key={category}
+                            className={selectedCategory === category ? "active" : ""}
+                            onClick={() => {
+                                setSelectedCategory(category as keyof typeof carsDataWithAll);
+                                setCurrentIndex(0); // Resetar índice ao mudar categoria
+                            }}
+                        >
+                            {category.charAt(0).toUpperCase() + category.slice(1)}
+                        </li>
+                    ))}
+                </ul>
 
-            {/* Imagem do veículo */}
-            <div className="carousel">
-                <button onClick={prevSlide} className="carousel-button prev">&#10094;</button>
+                {/* Imagem do veículo */}
+                <div className="carousel">
 
-                <div className="image-container">
-                    <img
-                        src={filteredCars[currentIndex].image}
-                        alt={filteredCars[currentIndex].name}
-                    />
-                    <h3>{filteredCars[currentIndex].name}</h3>
-                    <p>{filteredCars[currentIndex].details}</p>
+                    <div className="image-container">
+                        <img
+                            src={filteredCars[currentIndex].image}
+                            alt={filteredCars[currentIndex].name}
+                        />
+                        <h3>{filteredCars[currentIndex].name}</h3>
+                        <p>{filteredCars[currentIndex].details}</p>
+                    </div>
+
                 </div>
-
-                <button onClick={nextSlide} className="carousel-button next">&#10095;</button>
+                <div className="carousel-buttons">
+                    <button onClick={prevSlide} className="carousel-button-gallery prev">&#10094;</button>
+                    <button onClick={nextSlide} className="carousel-button-gallery next">&#10095;</button>
+                </div>
             </div>
-        </div>
+        </>
     );
 }
 
