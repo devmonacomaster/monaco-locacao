@@ -76,13 +76,10 @@ function Gallery() {
 
                 {/* Indicadores do carrossel */}
                 <div className="gallery-indicators">
-                    {filteredCars.map((_, index) => (
-                        <span
-                            key={index}
-                            className={`gallery-indicator ${index === currentIndex ? "active" : ""}`}
-                            onClick={() => setCurrentIndex(index)}
-                        ></span>
-                    ))}
+                    <div
+                        className="gallery-indicator"
+                        style={{ transform: `translateX(${(currentIndex / filteredCars.length) * 100}%)` }}
+                    ></div>
                 </div>
 
                 {/* Botões de navegação */}

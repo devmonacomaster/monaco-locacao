@@ -115,28 +115,22 @@
     }
 
     .gallery-indicators {
-        display: flex;
-        justify-content: center;
-        gap: 8px;
-        margin-top: 10px;
+        width: 15rem;
+        height: 4px;
+        background-color: #ddd;
+        /* border-radius: 3px; */
         position: relative;
-        /* Garante que os indicadores fiquem dentro do carrossel */
-        z-index: 10;
-        /* Mantém os indicadores acima da imagem */
+        overflow: hidden;
+        margin: 10px auto;
     }
 
     .gallery-indicator {
-        width: 12px;
-        height: 12px;
-        background-color: #ddd;
-        /* Cor mais clara para teste */
-        border-radius: 50%;
-        transition: background-color 0.3s ease-in-out, transform 0.2s;
-        cursor: pointer;
+        position: absolute;
+        height: 100%;
+        width: 20%;
+        background-color: #6daa35;
+        transition: transform 0.3s ease-in-out;
+        border-radius: 3px;
     }
 
-    .gallery-indicator.active {
-        background-color: #000000;
-        transform: scale(1.3);
-    }
 }
