@@ -3,16 +3,16 @@
     width: 100%;
     height: 24rem;
     overflow: hidden;
-  }
+}
 
-  .carousel-image {
+.carousel-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: opacity 0.5s ease-in-out;
-  }
+}
 
-  .carousel-button {
+.carousel-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -23,38 +23,48 @@
     font-size: 24px;
     background: none;
     transition: color 0.3s;
-  }
+}
 
-  .carousel-button:hover {
+.carousel-button:hover {
     color: #a7a7a7;
-  }
+}
 
-  .prev {
+.prev {
     left: 20px;
-  }
+}
 
-  .next {
+.next {
     right: 20px;
-  }
+}
 
 .carousel-indicators {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 10px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
 }
 
 .indicator {
-  width: 30px;
-  height: 6px;
-  border-radius: 3px;
-  background-color: rgba(255, 255, 255, 0.3);
-  transition: background-color 0.4s, transform 0.3s;
+    width: 30px;
+    height: 6px;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: background-color 0.4s, transform 0.3s;
 }
 
 .indicator.active {
-  background-color: rgba(255, 255, 255, 0.8);
-  transform: scaleX(1.3);
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: scaleX(1.3);
+}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 628px) and (max-width: 992px) {}
+
+@media (min-width: 0px) and (max-width: 628px) {
+    .carousel {
+        height: 20rem;
+    }
 }
