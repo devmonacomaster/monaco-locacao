@@ -4,21 +4,21 @@ import "../../css/components/monaco-gallery.css";
 // Dados dos veículos e caminhões
 const carsData = {
     veiculos: [
-        { name: "Rampage Laramie", image: "/images/cars/rampage_laramie.webp", details: "Diesel - 24/24" },
-        { name: "Rampage Rebel", image: "/images/cars/rampage_rebel.webp", details: "Diesel - 24/24" },
-        { name: "Rampage RT", image: "/images/cars/rampage_rt.webp", details: "Diesel - 24/24" },
-        { name: "Rampage Endurance", image: "/images/cars/rampage_endurance.webp", details: "Diesel - 24/24" },
-        { name: "Rampage Freedom", image: "/images/cars/rampage_freedom.webp", details: "Diesel - 24/24" },
-        { name: "Rampage Ranch", image: "/images/cars/rampage_ranch.png", details: "Diesel - 24/24" },
-        { name: "Rampage Ultra", image: "/images/cars/rampage_ultra.webp", details: "Diesel - 24/24" },
-        { name: "Rampage Volcano", image: "/images/cars/rampage_volcano.webp", details: "Diesel - 24/24" },
-        { name: "Rampage Titano", image: "/images/cars/rampage_titano.webp", details: "Diesel - 24/24" },
+        { name: "RAMPAGE LARAMIE", image: "/images/cars/rampage_laramie.webp", details: "Diesel - 24/24" },
+        { name: "RAMPAGE REBEL", image: "/images/cars/rampage_rebel.webp", details: "Diesel - 24/24" },
+        { name: "RAMPAGE RT", image: "/images/cars/rampage_rt.webp", details: "Diesel - 24/24" },
+        { name: "RAMPAGE ENDURANCE", image: "/images/cars/strada_endurance.webp", details: "Diesel - 24/24" },
+        { name: "RAMPAGE FREEDOM", image: "/images/cars/strada_freedom.webp", details: "Diesel - 24/24" },
+        { name: "RAMPAGE RANCH", image: "/images/cars/strada_ranch.png", details: "Diesel - 24/24" },
+        { name: "RAMPAGE ULTRA", image: "/images/cars/strada_ultra.webp", details: "Diesel - 24/24" },
+        { name: "RAMPAGE VOLCANO", image: "/images/cars/strada_volcano.webp", details: "Diesel - 24/24" },
+        { name: "RAMPAGE TITANO", image: "/images/cars/titano_titano.webp", details: "Diesel - 24/24" },
     ],
     caminhoes: [
-        { name: "Caminhão Constellation", image: "/images/truck/constellation.png", details: "Diesel - 23/24" },
-        { name: "Caminhão Delivery", image: "/images/truck/delivery.png", details: "Diesel - 23/24" },
-        { name: "Caminhão e-Delivery", image: "/images/truck/e-delivery.png", details: "Diesel - 23/24" },
-        { name: "Caminhão Meteor", image: "/images/truck/meteor.png", details: "Diesel - 23/24" },
+        { name: "CAMINHÃO CONSTELLATION", image: "/images/truck/constellation.png", details: "Diesel - 23/24" },
+        { name: "CAMINHÃO DELIVERY", image: "/images/truck/delivery.png", details: "Diesel - 23/24" },
+        { name: "CAMINHÃO E-DELIVERY", image: "/images/truck/e-delivery.png", details: "Diesel - 23/24" },
+        { name: "CAMINHÃO METEOR", image: "/images/truck/meteor.png", details: "Diesel - 23/24" },
     ]
 };
 
@@ -78,9 +78,13 @@ function Gallery() {
                 <div className="gallery-indicators">
                     <div
                         className="gallery-indicator"
-                        style={{ transform: `translateX(${(currentIndex / filteredCars.length) * 100}%)` }}
+                        style={{
+                            width: `${100 / filteredCars.length}%`, // Cada item ocupa a fração certa da barra
+                            transform: `translateX(${(currentIndex / filteredCars.length) * 900}%)`
+                        }}
                     ></div>
                 </div>
+
 
                 {/* Botões de navegação */}
                 <div className="gallery-buttons">
