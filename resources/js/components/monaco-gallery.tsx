@@ -22,10 +22,10 @@ const carsData = {
         { name: "RAMPAGE TITANO", image: "/images/cars/titano_titano.webp", details: "Diesel - 24/24" },
     ],
     caminhoes: [
-        { name: "CAMINHÃO CONSTELLATION", image: "/images/truck/constellation.png", details: "Diesel - 23/24" },
-        { name: "CAMINHÃO DELIVERY", image: "/images/truck/delivery.png", details: "Diesel - 23/24" },
-        { name: "CAMINHÃO E-DELIVERY", image: "/images/truck/e-delivery.png", details: "Diesel - 23/24" },
-        { name: "CAMINHÃO METEOR", image: "/images/truck/meteor.png", details: "Diesel - 23/24" },
+        { name: "CAMINHÃO CONSTELLATION", image: "/images/truck/constellation.png", details: "Diesel - 24/24" },
+        { name: "CAMINHÃO DELIVERY", image: "/images/truck/delivery.png", details: "Diesel - 24/24" },
+        { name: "CAMINHÃO E-DELIVERY", image: "/images/truck/e-delivery.png", details: "Diesel - 24/24" },
+        { name: "CAMINHÃO METEOR", image: "/images/truck/meteor.png", details: "Diesel - 24/24" },
     ]
 };
 
