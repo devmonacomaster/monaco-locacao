@@ -39,6 +39,11 @@ function AboutUs() {
                     </p>
                 </article>
             </div>
+            <div className="button-container">
+                <button className="button-about-us">
+                    Saiba mais sobre a Mônaco Locação
+                </button>
+            </div>
         </section>
     );
 }
