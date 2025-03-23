@@ -4,6 +4,7 @@ import SectionOne from "@/components/monaco-section-one";
 import SectionTwo from "@/components/monaco-section-two";
 import Gallery from "@/components/monaco-gallery";
 import AboutUs from "@/components/monaco-about";
+import ContactForm from "@/components/monaco-form";
 
 const images = [
     '/images/banner-1.webp',
@@ -20,6 +21,7 @@ function LandingPage() {
             <SectionTwo />
             <Gallery />
             <AboutUs />
+            <ContactForm />
         </div>
     );
 }
