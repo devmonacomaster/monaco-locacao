@@ -1,0 +1,17 @@
+.container-about-us {
+    background-color: #f6f6f6;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.image-about-us {
+    width: 80%;
+    height: 70%;
+    object-fit: cover;
+}

@@ -3,6 +3,7 @@ import Carousel from "@/components/ui/monaco-carousel";
 import SectionOne from "@/components/monaco-section-one";
 import SectionTwo from "@/components/monaco-section-two";
 import Gallery from "@/components/monaco-gallery";
+import AboutUs from "@/components/monaco-about";
 
 const images = [
     '/images/banner-1.webp',
@@ -18,6 +19,7 @@ function LandingPage() {
             <SectionOne />
             <SectionTwo />
             <Gallery />
+            <AboutUs />
         </div>
     );
 }
