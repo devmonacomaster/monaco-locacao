@@ -80,7 +80,9 @@ const ContactForm = () => {
             <div className="background-image"></div>
             <div className="overlay"></div>
             <div className="contact-form-content">
-                <h2>Como podemos lhe atender?</h2>
+                <div className="form-title">
+                    <h2>Como podemos lhe atender?</h2>
+                </div>
                 <p className="form-subtitle">Deixe seus dados que iremos entrar em contato</p>
 
                 <form onSubmit={handleSubmit} className="contact-form">
@@ -101,15 +103,13 @@ const ContactForm = () => {
 
                     <input type="url" name="site" value={formData.site} onChange={handleChange} placeholder="Site" />
                     {errors.site && <p className="error">{errors.site[0]}</p>}
-
-                    <p className="form-subtitle">Você prefere ligação ou email?</p>
+                    <h1 className="form-subtitle">Você prefere ligação ou email?</h1>
                     <select name="contatoPreferido" value={formData.contatoPreferido} onChange={handleChange}>
                         <option value="email">Email</option>
                         <option value="telefone">Telefone</option>
                     </select>
-
                     <button type="submit" className="submit-button" disabled={loading}>
-                        {loading ? "Enviando..." : "Receba uma proposta"}
+                        {loading ? "Enviando..." : "Receba uma proposta \u27F6"}
                     </button>
                 </form>
             </div>

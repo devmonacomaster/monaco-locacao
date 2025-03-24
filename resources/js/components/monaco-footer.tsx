@@ -22,7 +22,7 @@ function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    <FacebookLogo className="social-icon" />
+                    <FacebookLogo className="social-icon-footer" />
                 </a>
                 <a
                     href="https://www.instagram.com/monacolocacao/"

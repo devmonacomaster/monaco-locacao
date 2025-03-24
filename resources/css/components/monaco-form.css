@@ -39,11 +39,15 @@
     text-align: center;
 }
 
+.form-title {
+    font-size: 1.30rem;
+    color: #b3b300;
+    padding-bottom: 0.50rem;
+}
 
 .form-subtitle {
-    font-size: 14px;
+    font-size: 0.90rem;
     color: #ddd;
-    margin-bottom: 20px;
 }
 
 .contact-form {
@@ -63,13 +67,13 @@ label {
 input,
 select {
     padding: 10px;
-        border: none;
-        border-bottom: 2px solid #525252;
-        border-radius: 0;
-        font-size: 16px;
-        outline: none;
-        background: transparent;
-        color: #ffffff;
+    border: none;
+    border-bottom: 2px solid #525252;
+    border-radius: 0;
+    font-size: 16px;
+    outline: none;
+    background: transparent;
+    color: #ffffff;
 }
 
 input:focus,
@@ -78,14 +82,15 @@ select:focus {
 }
 
 .submit-button {
-    background: linear-gradient(to right, #cccc00, #ffaa00);
     border: none;
     padding: 10px;
     font-size: 16px;
     color: white;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 20px;
+    outline: 0.1rem solid #eb6817df;
     transition: background 0.3s;
+    background: linear-gradient(to right, #eb6817df, rgba(255, 255, 255, 0));
 }
 
 .submit-button:hover {
