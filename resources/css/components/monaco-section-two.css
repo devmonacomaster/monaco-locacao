@@ -1,59 +1,92 @@
-.section-two {
-    background-color: white;
-}
-
-.section-two-text {
-    color: black;
-}
-
-.section-two-title {
-    color: black;
-}
-
-.highlight {
-    color: #6e8f84;
-}
-
-/* Desktop */
 @media (min-width: 992px) {
     .section-two {
-        background-color: salmon;
-    }
-}
-
-/* Tablet */
-@media (min-width: 628px) and (max-width: 992px) {
-    .section-two {
-        background-color: rgb(146, 210, 82);
-
+        background-color: #ffffff;
+        height: 15rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        gap: 5%;
     }
 
     .section-two-text {
-        margin-bottom: 2.5rem;
+        color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        width: 30rem;
         text-align: center;
-        font-size: 1rem;
+        font-size: 1.25rem;
         font-weight: 500;
-        margin-left: 3.5rem;
-        margin-right: 3.5rem;
-        background-color: rgb(210, 165, 82);
     }
 
     .section-two-title {
+        color: black;
         text-align: right;
         margin-right: 5.0rem;
-        font-size: 1.5rem;
-        font-weight: bold;
-        background-color: rgb(188, 170, 138);
+        font-weight: 900;
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+
+    .highlight {
+        color: #6e8f84;
     }
 }
 
-/* Mobile */
-@media (min-width: 0px) and (max-width: 628px) {
+@media (min-width: 628px) and (max-width: 992px) {
+    .section-two {
+        background-color: #ffffff;
+        height: 15rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        gap: 5%;
+        padding: 5%;
+    }
 
     .section-two-text {
-        margin-bottom: 2.5rem;
-        margin-top: 0px;
-        padding-top: 0px;
+        color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        width: 25rem;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .section-two-title {
+        color: black;
+        text-align: right;
+        margin-right: 5.0rem;
+        font-weight: 900;
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .highlight {
+        color: #6e8f84;
+    }
+}
+
+@media (min-width: 0px) and (max-width: 628px) {
+
+    .section-two {
+        background-color: #ffffff;
+        height: 18rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5%;
+    }
+
+    .section-two-text {
+        color: black;
         text-align: center;
         font-size: 1rem;
         font-weight: 500;
@@ -63,9 +96,14 @@
     }
 
     .section-two-title {
+        color: black;
         text-align: right;
-        margin-right: 4.0rem;
+        margin-left: 25%;
         font-size: 1.6rem;
         font-weight: 900;
+    }
+
+    .highlight {
+        color: #6e8f84;
     }
 }

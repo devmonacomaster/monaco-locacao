@@ -74,9 +74,6 @@
     height: 2.5rem;
 }
 
-/* ---------------- Breakpoints ---------------- */
-
-/* Tablets */
 @media (max-width: 1024px) {
     .header {
         height: 4.5rem;
@@ -121,8 +118,7 @@
     }
 }
 
-/* Mobile */
-@media (max-width: 480px) {
+@media (min-width: 0px) and (max-width: 628px) {
     .header {
         height: 5rem;
         padding: 0 2rem;
@@ -142,23 +138,8 @@
     .cta {
         font-size: 0.9rem;
     }
+
     .social-icon {
         margin-top: 1.25rem;
-    }
-}
-
-/* Extra Small Devices */
-@media (max-width: 320px) {
-    .nav-link,
-    .cta {
-        font-size: 0.8rem;
-    }
-
-    .logo {
-        height: 2rem;
-    }
-
-    .arrow-icon {
-        height: 1.8rem;
     }
 }
