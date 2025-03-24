@@ -6,14 +6,14 @@ function Footer() {
     return (
         <div className="footer-container">
             <div className="footer-top-links">
-                <h2>Voltar ao início</h2>
+                <h2>Voltar ao início {'\u02C4'}</h2>
                 <div className="footer-contact">
                     <h2 className="text-highlight">CONTATO</h2>
                     <h2><u>Fale Conosco</u></h2>
                 </div>
             </div>
             <div className="follow-us-text">
-                <p>Siga-nos nas nossas redes sociais</p>
+                <p>Siga-nos nas <br />ossas redes sociais</p>
             </div>
             <div className="social-media">
                 <a
@@ -39,7 +39,9 @@ function Footer() {
                 <p>Etiqueta de Segurança</p>
                 <p>Ofertas</p>
             </div>
-            <p>Copyright © 2025 Mônaco Locação.</p>
+            <div className="copyright">
+                <p>Copyright © 2025 Mônaco Locação.</p>
+            </div>
         </div>
     );
 }
