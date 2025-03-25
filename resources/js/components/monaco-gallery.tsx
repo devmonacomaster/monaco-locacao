@@ -67,14 +67,12 @@ function Gallery() {
                             {category.charAt(0).toUpperCase() + category.slice(1)}
                         </li>
                     ))}
-
-                    <div className="gallery-buttons-inline">
-                        <button onClick={() => scroll("left")} className="gallery-button-inline prev">&#10094;</button>
-                        <button onClick={() => scroll("right")} className="gallery-button-inline next">&#10095;</button>
-                    </div>
                 </ul>
+                <div className="gallery-buttons-inline">
+                    <button onClick={() => scroll("left")} className="gallery-single-button prev">&#10094;</button>
+                    <button onClick={() => scroll("right")} className="gallery-single-button next">&#10095;</button>
+                </div>
             </div>
-
             <div className="gallery-scroll" ref={scrollRef}>
                 {filteredCars.map((car, index) => (
                     <div className="image-container" key={index}>
