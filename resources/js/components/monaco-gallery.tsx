@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import "../../css/components/monaco-gallery.css";
 
 type Vehicle = {
@@ -22,10 +22,12 @@ const carsData = {
         { name: "RAMPAGE TITANO", image: "/images/cars/titano_titano.webp", details: "Diesel - 24/24" },
     ],
     caminhoes: [
-        { name: "CAMINHÃO CONSTELLATION", image: "/images/truck/constellation.png", details: "Diesel - 24/24" },
-        { name: "CAMINHÃO DELIVERY", image: "/images/truck/delivery.png", details: "Diesel - 24/24" },
-        { name: "CAMINHÃO E-DELIVERY", image: "/images/truck/e-delivery.png", details: "Diesel - 24/24" },
-        { name: "CAMINHÃO METEOR", image: "/images/truck/meteor.png", details: "Diesel - 24/24" },
+        { name: "CONSTELLATION", image: "/images/truck/constellation.png", details: "Diesel - 24/24" },
+        { name: "DELIVERY", image: "/images/truck/delivery.png", details: "Diesel - 24/24" },
+        { name: "E-DELIVERY", image: "/images/truck/e-delivery.png", details: "Diesel - 24/24" },
+        { name: "METEOR", image: "/images/truck/meteor.png", details: "Diesel - 24/24" },
+        { name: "VOCACIONAIS", image: "/images/truck/vocacionais.png", details: "Diesel - 24/24" },
+        { name: "ESCOLAR", image: "/images/truck/escolar.png", details: "Diesel - 24/24" },
     ]
 };
 
@@ -36,52 +38,51 @@ const carsDataWithAll: Record<Category, Vehicle[]> = {
 
 function Gallery() {
     const [selectedCategory, setSelectedCategory] = useState<Category>("todos");
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const scrollRef = useRef<HTMLDivElement>(null);
 
     const filteredCars = carsDataWithAll[selectedCategory];
-    const totalItems = filteredCars.length;
 
-    const changeSlide = (direction: 1 | -1) => {
-        setCurrentIndex((prev) => (prev + direction + totalItems) % totalItems);
+    const scroll = (direction: "left" | "right") => {
+        if (scrollRef.current) {
+            const scrollAmount = 350;
+            scrollRef.current.scrollBy({
+                left: direction === "left" ? -scrollAmount : scrollAmount,
+                behavior: "smooth",
+            });
+        }
     };
 
     return (
         <div className="container">
             <h1 className="title">Explore o nosso portfólio</h1>
 
-            <ul className="list-option">
-                {Object.keys(carsDataWithAll).map((category) => (
-                    <li
-                        key={category}
-                        className={selectedCategory === category ? "active" : ""}
-                        onClick={() => {
-                            setSelectedCategory(category as Category);
-                            setCurrentIndex(0);
-                        }}
-                    >
-                        {category.charAt(0).toUpperCase() + category.slice(1)}
-                    </li>
+            <div className="list-option-container">
+                <ul className="list-option">
+                    {Object.keys(carsDataWithAll).map((category) => (
+                        <li
+                            key={category}
+                            className={selectedCategory === category ? "active" : ""}
+                            onClick={() => setSelectedCategory(category as Category)}
+                        >
+                            {category.charAt(0).toUpperCase() + category.slice(1)}
+                        </li>
+                    ))}
+
+                    <div className="gallery-buttons-inline">
+                        <button onClick={() => scroll("left")} className="gallery-button-inline prev">&#10094;</button>
+                        <button onClick={() => scroll("right")} className="gallery-button-inline next">&#10095;</button>
+                    </div>
+                </ul>
+            </div>
+
+            <div className="gallery-scroll" ref={scrollRef}>
+                {filteredCars.map((car, index) => (
+                    <div className="image-container" key={index}>
+                        <img src={car.image} alt={car.name} />
+                        <h3>{car.name}</h3>
+                        <p>{car.details}</p>
+                    </div>
                 ))}
-            </ul>
-
-            <div className="gallery">
-                <div className="image-container">
-                    <img src={filteredCars[currentIndex].image} alt={filteredCars[currentIndex].name} />
-                    <h3>{filteredCars[currentIndex].name}</h3>
-                    <p>{filteredCars[currentIndex].details}</p>
-                </div>
-            </div>
-
-            <div className="gallery-indicators">
-                <div
-                    className="gallery-indicator"
-                    style={{ width: `${100 / totalItems}%`, transform: `translateX(${(currentIndex / totalItems) * 900}%)` }}
-                ></div>
-            </div>
-
-            <div className="gallery-buttons">
-                <button onClick={() => changeSlide(-1)} className="gallery-button prev">&#10094;</button>
-                <button onClick={() => changeSlide(1)} className="gallery-button next">&#10095;</button>
             </div>
         </div>
     );

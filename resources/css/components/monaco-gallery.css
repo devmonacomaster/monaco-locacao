@@ -4,28 +4,103 @@
 
 @media (min-width: 0px) and (max-width: 628px) {
     .container {
-        background-color: #fff;
+        background-color: #ffffff;
         color: black;
-        height: 35rem;
+        height: 30rem;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
 
+    .gallery-wrapper {
+        position: relative;
+        width: 100%;
+        margin: 20px 0;
+        background-color: #ffffff;
+    }
+
+    .gallery-scroll {
+        display: flex;
+        gap: 2%;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        padding: 2%;
+    }
+
+    .gallery-scroll::-webkit-scrollbar {
+        height: 3px;
+    }
+
+    .gallery-scroll::-webkit-scrollbar-thumb {
+        margin-top: 5%;
+        padding-top: 5%;
+        background-color: #c4ce34;
+        border-radius: 4px;
+    }
+
+    .gallery-button {
+        position: absolute;
+        top: 40%;
+        background: #00000080;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 2rem;
+        z-index: 2;
+    }
+
+    .gallery-button.prev {
+        left: 0;
+    }
+
+    .gallery-button.next {
+        right: 0;
+    }
+
+    .gallery-buttons-inline {
+        display: flex;
+        justify-content: center;
+        gap: 6px;
+        padding-left: 1%;
+        padding-top: 5%;
+    }
+
+    .gallery-button-inline {
+        background: #151515;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 8px 14px;
+        font-size: 0.65rem;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .gallery-button-inline:hover {
+        background: #555;
+    }
+
+    .gallery-scroll {
+        width: 90%;
+    }
+
     .title {
         text-align: center;
-        font-size: 1.4rem;
+        font-size: 1.5rem;
         font-weight: 900;
-        margin-bottom: 1rem;
+        margin-bottom: 0.50rem;
     }
 
     .list-option {
         font-size: 0.9rem;
         font-weight: 900;
         display: flex;
-        /* gap: 0.0rem; */
         padding-bottom: 1rem;
+        gap: 5px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .list-option li {
@@ -34,63 +109,43 @@
         position: relative;
     }
 
+    .list-option li.active {
+        color: #000000;
+    }
+
     .list-option li.active::after {
         content: "";
         display: block;
         width: 100%;
         height: 3px;
         background-color: #6e8f84;
+        border-radius: 2px;
         position: absolute;
         bottom: -3px;
         left: 0;
     }
 
-    .gallery {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 70%;
-        background-color: #f6f6f6;
-        border-radius: 1%;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        margin-bottom: 1rem;
-    }
-
-    .gallery-buttons {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .gallery-button {
-        margin-top: 1rem;
-        background: black;
-        border: none;
-        font-size: 1rem;
-        cursor: pointer;
-        color: #fff;
-        width: 2rem;
-        height: 2rem;
-        border-radius: 23%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
     .image-container {
-        width: 320px;
+        width: 15rem;
+        height: 14rem;
+        background: #f5f5f5;
+        padding: 2rem;
+        border-radius: 10px;
+        flex-shrink: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
-        text-align: center;
+        justify-content: center;
+        margin-bottom: 1rem;
     }
 
     .image-container img {
         max-width: 100%;
-        max-height: 200px;
+        max-height: 100%;
+        border-radius: 10px;
+        max-height: 9rem;
         object-fit: contain;
+
     }
 
     .image-container h3 {
@@ -102,25 +157,7 @@
     .image-container p {
         margin-top: 5px;
         font-size: 14px;
-        color: #555;
+        color: #262626;
     }
 
-    .gallery-indicators {
-        width: 15rem;
-        height: 3px;
-        background-color: #ddd;
-        border-radius: 3px;
-        position: relative;
-        overflow: hidden;
-        margin: 10px auto;
-    }
-
-    .gallery-indicator {
-        position: absolute;
-        height: 100%;
-        width: 80%;
-        background-color: #cc0;
-        transition: transform 0.3s ease-in-out;
-        border-radius: 3px;
-    }
 }
