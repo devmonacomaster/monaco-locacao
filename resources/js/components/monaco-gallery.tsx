@@ -53,7 +53,7 @@ function Gallery() {
     };
 
     return (
-        <div className="container">
+        <div className="container-gallery-all">
             <h1 className="title">Explore o nosso portfólio</h1>
 
             <div className="list-option-container">
