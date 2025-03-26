@@ -15,7 +15,7 @@ const images = [
 
 function LandingPage() {
     return (
-        <div>
+        <>
             <MonacoHeader />
             <Carousel images={images} />
             <SectionOne />
@@ -24,7 +24,7 @@ function LandingPage() {
             <AboutUs />
             <ContactForm />
             <Footer />
-        </div>
+        </>
     );
 }
 

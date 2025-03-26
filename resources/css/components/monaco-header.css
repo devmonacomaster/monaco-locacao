@@ -1,3 +1,4 @@
+/* Estilos base */
 .header {
     display: flex;
     justify-content: space-between;
@@ -8,25 +9,36 @@
     padding: 0 3.5rem;
     position: relative;
     z-index: 50;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-.social-icon {
-    display: inline-flex;
-    width: 1.50rem;
-    height: 1.50rem;
-    margin-left: 0.50rem;
+/* Logo */
+.logo-link {
+    display: flex;
+    align-items: center;
 }
 
 .logo {
     height: 2.5rem;
+    transition: transform 0.3s ease-in-out;
 }
 
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* Botão do menu responsivo */
 .menu-button {
     display: none;
     background: none;
     border: none;
     cursor: pointer;
     color: black;
+    transition: transform 0.3s ease;
+}
+
+.menu-button:hover {
+    transform: scale(1.1);
 }
 
 .icon {
@@ -34,11 +46,13 @@
     height: 2rem;
 }
 
+/* Navbar */
 .nav {
     display: flex;
     align-items: center;
 }
 
+/* Lista de navegação */
 .nav-list {
     display: flex;
     align-items: center;
@@ -53,13 +67,14 @@
     font-weight: 700;
     font-size: 1.1rem;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease-in-out;
 }
 
 .nav-link:hover {
     color: #fe6c12;
 }
 
+/* Botão CTA */
 .cta {
     color: #fe6c12;
     font-weight: 700;
@@ -68,15 +83,43 @@
     gap: 0.5rem;
     font-size: 1.1rem;
     text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 2px solid #fe6c12;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.cta:hover {
+    background-color: #fe6c12;
+    color: white;
 }
 
 .arrow-icon {
-    height: 2.5rem;
+    height: 2rem;
 }
 
+/* Ícones sociais */
+.social-icons-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.social-icon {
+    width: 1.8rem;
+    height: 1.8rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Responsividade */
 @media (max-width: 1024px) {
     .header {
         height: 4.5rem;
+        padding: 0 2rem;
     }
 
     .menu-button {
@@ -92,17 +135,31 @@
         padding: 1rem;
         display: none;
         flex-direction: column;
-        align-items: flex-end;
+        align-items: center;
         transition: all 0.3s ease-in-out;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
     }
 
     .nav.open {
         display: flex;
+        animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     .nav-list {
         flex-direction: column;
-        gap: 1rem;
+        gap: 1.2rem;
         width: 100%;
         text-align: center;
     }
@@ -112,34 +169,31 @@
         font-size: 1rem;
     }
 
+    .cta {
+        padding: 0.6rem 1.2rem;
+    }
+
     .arrow-icon {
         display: none;
-        height: 2rem;
     }
 }
 
-@media (min-width: 0px) and (max-width: 628px) {
+@media (max-width: 628px) {
     .header {
-        height: 5rem;
-        padding: 0 2rem;
-    }
-
-    .nav {
-        top: 4rem;
+        padding: 0 1.5rem;
     }
 
     .nav-list {
-        gap: 0.8rem;
-        align-items: flex-start;
-        padding-left: 1.25rem;
+        gap: 1rem;
+        align-items: center;
     }
 
-    .nav-link,
-    .cta {
-        font-size: 0.9rem;
+    .social-icons-container {
+        justify-content: center;
     }
 
     .social-icon {
-        margin-top: 1.25rem;
+        width: 1.6rem;
+        height: 1.6rem;
     }
 }
