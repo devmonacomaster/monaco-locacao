@@ -1,8 +1,10 @@
 .container {
+    height: 30rem;
+    width: 100%;
+    margin: 0;
+    padding: 0;
     background-color: #ffffff;
     color: black;
-    height: 30rem;
-    padding-top: 5%;
 }
 
 .title {
@@ -18,8 +20,7 @@
     display: flex;
     justify-content: space-around;
     width: 100%;
-    gap: 0%;
-    margin-bottom: 7%;
+    margin-bottom: 6%;
 }
 
 .list-option {
@@ -71,7 +72,7 @@
 
 .gallery-scroll::-webkit-scrollbar {
     height: 3px;
-    width: 90%;
+    background-color: rgb(206, 206, 206);
 }
 
 .gallery-scroll::-webkit-scrollbar-thumb {
@@ -79,6 +80,7 @@
     padding-top: 5%;
     border-radius: 4px;
     background-color: #c4ce34;
+    width: 10%;
 }
 
 .gallery-button.prev {
@@ -144,32 +146,62 @@
     color: #262626;
 }
 
-/* Tablet */
-@media (min-width: 768px) {
-    .list-option-container {
-        gap: 5%;
-    }
-
-    .list-option {
-        gap: 5px;
-    }
-
-    .gallery-buttons-inline {
-        margin-right: 10%;
-    }
-
+@media (min-width: 1024px) {
     .container {
         padding-top: 1rem;
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 100%;
     }
 
     .title {
         font-size: 1.5rem;
     }
+
+    .list-option-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 4rem;
+        padding-left: 7rem;
+    }
+
+    .list-option {
+        gap: 5px;
+    }
+    .container-gallery {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+    }
+    .gallery-scroll {
+        width: 80%;
+        border-radius: 10px;
+        background-color: #555;
+    }
+
 }
 
-/* Desktop */
-@media (min-width: 1024px) {
-    .container {
-        padding-top: 1rem;
+@media (max-width: 320px) {
+    .title {
+        font-size: 1.10rem;
+    }
+
+    .list-option {
+        font-size: 0.80rem;
+    }
+
+    .list-option-container {
+        gap: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }

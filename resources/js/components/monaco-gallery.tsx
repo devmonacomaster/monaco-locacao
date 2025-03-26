@@ -11,9 +11,9 @@ type Category = "todos" | "veiculos" | "caminhoes";
 
 const carsData = {
     veiculos: [
-        { name: "RAMPAGE LARAMIE", image: "/images/cars/rampage_laramie.webp", details: "Diesel - 24/24" },
-        { name: "RAMPAGE REBEL", image: "/images/cars/rampage_rebel.webp", details: "Diesel - 24/24" },
         { name: "RAMPAGE RT", image: "/images/cars/rampage_rt.webp", details: "Diesel - 24/24" },
+        { name: "RAMPAGE REBEL", image: "/images/cars/rampage_rebel.webp", details: "Diesel - 24/24" },
+        { name: "RAMPAGE LARAMIE", image: "/images/cars/rampage_laramie.webp", details: "Diesel - 24/24" },
         { name: "RAMPAGE ENDURANCE", image: "/images/cars/strada_endurance.webp", details: "Diesel - 24/24" },
         { name: "RAMPAGE FREEDOM", image: "/images/cars/strada_freedom.webp", details: "Diesel - 24/24" },
         { name: "RAMPAGE RANCH", image: "/images/cars/strada_ranch.png", details: "Diesel - 24/24" },
@@ -69,18 +69,26 @@ function Gallery() {
                     ))}
                 </ul>
                 <div className="gallery-buttons-inline">
-                    <button onClick={() => scroll("left")} className="gallery-single-button prev">&#10094;</button>
-                    <button onClick={() => scroll("right")} className="gallery-single-button next">&#10095;</button>
+                    <button
+                        onClick={() => scroll("left")}
+                        className="gallery-single-button prev">&#10094;
+                    </button>
+                    <button
+                        onClick={() => scroll("right")}
+                        className="gallery-single-button next">&#10095;
+                    </button>
                 </div>
             </div>
-            <div className="gallery-scroll" ref={scrollRef}>
-                {filteredCars.map((car, index) => (
-                    <div className="image-container" key={index}>
-                        <img src={car.image} alt={car.name} />
-                        <h3>{car.name}</h3>
-                        <p>{car.details}</p>
-                    </div>
-                ))}
+            <div className="container-gallery">
+                <div className="gallery-scroll" ref={scrollRef}>
+                    {filteredCars.map((car, index) => (
+                        <div className="image-container" key={index}>
+                            <img src={car.image} alt={car.name} />
+                            <h3>{car.name}</h3>
+                            <p>{car.details}</p>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     );

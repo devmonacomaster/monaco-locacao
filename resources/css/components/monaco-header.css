@@ -183,6 +183,11 @@
         padding: 0 1.5rem;
     }
 
+    .logo {
+        height: 2rem;
+        transition: transform 0.3s ease-in-out;
+    }
+
     .nav-list {
         gap: 1rem;
         align-items: center;
