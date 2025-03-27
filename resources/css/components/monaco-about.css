@@ -23,9 +23,7 @@
         padding-bottom: 2rem;
     }
 
-    .section-about-1
-    .section-about-2
-    .section-about-3 {
+    .section-about-1 .section-about-2 .section-about-3 {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -36,15 +34,17 @@
         font-weight: 700;
         padding-bottom: 0.50rem;
         padding-top: 2rem;
+        display: flex;
+        justify-content: center;
     }
 
-    .about-us-text {
-        /* font-size: 0.90rem;
+    .about-p {
+        font-size: 0.90rem;
         font-weight: 400;
         padding-left: 10%;
         padding-right: 10%;
         line-height: 1.2;
-        text-align: center; */
+        text-align: center;
     }
 
     .button-about-us {
@@ -96,18 +96,36 @@
             width: 90%;
         }
 
+        .section-about-1 {
+            height: 11rem;
+            width: 35rem;
+        }
+
+        .section-about-2 {
+            height: 11rem;
+            width: 35rem;
+        }
+
         .section-about-3 {
-            padding-top: 1.40rem;
-            width: 90%;
+            height: 11rem;
+            width: 35rem;
+            display: flex;
+            justify-content: start;
+            align-items: left;
+            flex-direction: column;
         }
 
         .about-h2 {
             font-weight: 900;
-            margin-bottom: 0.50rem;
+            /* margin-bottom: 0.50rem; */
+            justify-content: left;
         }
 
         .about-p {
             font-size: 0.85rem;
+            text-align: left;
+            padding-left: 0%;
+            padding-right: 0%;
         }
 
     }
