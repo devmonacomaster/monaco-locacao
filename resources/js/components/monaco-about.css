@@ -74,7 +74,6 @@
 
     @media (min-width: 768px) {
         .container-about-us {
-            background-color: #ffffff;
             height: 55rem;
         }
 
@@ -128,4 +127,17 @@
             padding-right: 0%;
         }
 
+        @media (min-width: 1280px) {
+            .container-about-us {
+                height: auto;
+            }
+            .image-about-us {
+                width: 80%;
+                height: auto;
+            }
+            .title-about-us {
+                font-size: 2rem;
+                padding-bottom: 3%;
+            }
+        }
     }

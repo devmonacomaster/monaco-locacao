@@ -1,4 +1,4 @@
-import "../../css/components/monaco-footer.css";
+import "./monaco-footer.css";
 import FacebookLogo from '@/components/ui/icon-facebook';
 import InstagramLogo from '@/components/ui/icon-instagram';
 

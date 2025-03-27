@@ -1,4 +1,4 @@
-import "../../css/components/monaco-section-two.css"
+import "./monaco-section-two.css"
 
 function SectionTwo() {
     return (

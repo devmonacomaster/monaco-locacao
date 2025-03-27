@@ -27,7 +27,6 @@
     transform: scale(1.05);
 }
 
-/* Botão do menu responsivo */
 .menu-button {
     display: none;
     background: none;
@@ -74,7 +73,6 @@
     color: #fe6c12;
 }
 
-/* Botão CTA */
 .cta {
     color: #fe6c12;
     font-weight: 700;
@@ -84,21 +82,14 @@
     font-size: 1.1rem;
     text-decoration: none;
     padding: 0.5rem 1rem;
-    border: 2px solid #fe6c12;
     border-radius: 5px;
     transition: all 0.3s ease;
-}
-
-.cta:hover {
-    background-color: #fe6c12;
-    color: white;
 }
 
 .arrow-icon {
     height: 2rem;
 }
 
-/* Ícones sociais */
 .social-icons-container {
     display: flex;
     align-items: center;
@@ -115,7 +106,6 @@
     transform: scale(1.1);
 }
 
-/* Responsividade */
 @media (max-width: 1024px) {
     .header {
         height: 4.5rem;

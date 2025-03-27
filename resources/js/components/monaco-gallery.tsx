@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import "../../css/components/monaco-gallery.css";
+import "./monaco-gallery.css";
 
 type Vehicle = {
     name: string;

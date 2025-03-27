@@ -1,4 +1,4 @@
-import "../../css/components/monaco-about.css";
+import "./monaco-about.css";
 
 function AboutUs() {
     return (

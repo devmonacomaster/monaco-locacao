@@ -4,7 +4,7 @@ import FacebookLogo from "@/components/ui/icon-facebook";
 import InstagramLogo from "@/components/ui/icon-instagram";
 import MonacoLogo from "@/components/ui/icon-monaco-logo";
 import ArrowHeader from "@/components/ui/icon-arrow-header";
-import "../../css/components/monaco-header.css";
+import "./monaco-header.css";
 
 function MonacoHeader() {
     const [isOpen, setIsOpen] = useState(false);

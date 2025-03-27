@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../../css/components/monaco-form.css";
+import "./monaco-form.css";
 
 interface FormDataState {
     nome: string;
