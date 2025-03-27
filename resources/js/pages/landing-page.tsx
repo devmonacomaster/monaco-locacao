@@ -21,8 +21,8 @@ function LandingPage() {
             <SectionOne />
             <SectionTwo />
             <Gallery />
-            {/* <AboutUs />
-            <ContactForm />
+            <AboutUs />
+            {/* <ContactForm />
             <Footer /> */}
         </>
     );
