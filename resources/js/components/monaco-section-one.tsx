@@ -12,7 +12,7 @@ function SectionOne() {
                 <div className="vertical-line"></div>
 
                 <li className="section-item-one">
-                    <h1>NÃO COMPROMETE O CADASTRO DO BACEN</h1>
+                    <h1>NÃO COMPROMETE<br /> O CADASTRO DO BACEN</h1>
                 </li>
 
                 <div className="horizontal-line"></div>

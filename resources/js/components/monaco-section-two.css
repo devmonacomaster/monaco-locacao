@@ -15,7 +15,7 @@
 
 .section-two-text {
     width: 75%;
-    padding-bottom: 1.5rem;
+    padding-bottom: 5%;
 
     font-size: 0.90rem;
     font-weight: 500;
@@ -25,8 +25,7 @@
 }
 
 .section-two-title {
-    font-size: 1.75rem;
-
+    font-size: 1.50rem;
     font-weight: 900;
 
     display: flex;
@@ -40,9 +39,55 @@
     line-height: 1.2;
 }
 
+@media (min-width: 768px) {
+    .section-two {
+        flex-direction: row;
+    }
 
-@media (min-width: 768px) {}
+    .section-two-title {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+    }
 
-@media (min-width: 1024px) {}
+    .section-two-text {
+        width: 20rem;
+        padding-bottom: 0;
+        padding-right: 5%;
 
-@media (min-width: 1024px) {}
+        font-size: 0.80rem;
+
+        display: flex;
+        text-align: left;
+    }
+}
+
+@media (min-width: 1024px) {
+    .section-two {
+        height: 12rem;
+    }
+
+    .section-two-text {
+        font-size: 0.90rem;
+
+        display: flex;
+        text-align: left;
+    }
+}
+
+@media (min-width: 1440px) {
+    .section-two-text {
+        width: 28rem;
+        padding-bottom: 0;
+
+        font-size: 1rem;
+
+        display: flex;
+        text-align: left;
+    }
+
+    .section-two-title {
+        font-size: 2rem;
+        line-height: 1.1;
+    }
+}
