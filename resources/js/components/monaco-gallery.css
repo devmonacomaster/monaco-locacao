@@ -1,32 +1,37 @@
 .container-gallery-all {
+    background-color: #ffffff;
+    color: black;
+
     height: 35rem;
     width: 100%;
     padding-top: 3rem;
-    background-color: #ffffff;
-    color: black;
 }
 
 .title {
-    text-align: center;
     font-size: 1.40rem;
     font-weight: 900;
+
     margin-bottom: 0.50rem;
-    /* padding-top: 5%; */
     padding-bottom: 1%;
+
+    text-align: center;
 }
 
 .list-option-container {
-    display: flex;
-    justify-content: space-around;
     width: 100%;
     margin-bottom: 2rem;
+
+    display: flex;
+    justify-content: space-around;
 }
 
 .list-option {
     font-size: 0.9rem;
     font-weight: 900;
-    display: flex;
+
     gap: 0rem;
+
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -38,35 +43,41 @@
 }
 
 .list-option li.active::after {
+    background-color: #6e8f84;
+
     content: "";
-    display: block;
     width: 100%;
     height: 3px;
-    background-color: #6e8f84;
     border-radius: 2px;
-    position: absolute;
     bottom: -3px;
     left: 0;
+
+    display: block;
+    position: absolute;
 }
 
 .gallery-button {
-    position: absolute;
-    top: 40%;
     background: #ff111180;
     color: #fff;
-    border: none;
+
+    top: 40%;
     padding: 10px;
     cursor: pointer;
     font-size: 2rem;
     z-index: 2;
+
+    border: none;
+    position: absolute;
 }
 
 .gallery-scroll {
-    display: flex;
+    padding: 2%;
     gap: 2%;
+
     overflow-x: auto;
     scroll-behavior: smooth;
-    padding: 2%;
+    
+    display: flex;
 }
 
 .gallery-scroll::-webkit-scrollbar {
@@ -145,12 +156,6 @@
     color: #262626;
 }
 
-@media (min-width: 1024px) {
-    .container-gallery-all {
-        width: 100%;
-    }
-}
-
 @media (min-width: 768px) {
     .container-gallery-all {
         width: 100%;
@@ -188,20 +193,8 @@
 
 }
 
-@media (max-width: 320px) {
-    .title {
-        font-size: 1.10rem;
-    }
-
-    .list-option {
-        font-size: 0.80rem;
-    }
-
-    .list-option-container {
-        gap: 1rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+@media (min-width: 1024px) {
+    .container-gallery-all {
+        width: 100%;
     }
 }
