@@ -1,8 +1,8 @@
-@media (min-width: 992px) {}
+/* @media (min-width: 992px) {}
 
 @media (min-width: 628px) and (max-width: 992px) {}
 
-@media (min-width: 0px) and (max-width: 628px) {
+@media (min-width: 0px) and (max-width: 628px) { */
 
     .contact-form-container {
         position: relative;
@@ -102,4 +102,4 @@
     .submit-button:hover {
         background: linear-gradient(to right, #ffaa00, #cc8800);
     }
-}
+/* } */
