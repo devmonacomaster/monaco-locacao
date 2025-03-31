@@ -2,34 +2,36 @@
     background-color: #ffffff;
     color: black;
 
-    height: 35rem;
+    height: auto;
     width: 100%;
+
     padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
 .title {
-    font-size: 1.40rem;
-    font-weight: 900;
+    padding-bottom: 0.70rem;
 
-    margin-bottom: 0.50rem;
-    padding-bottom: 1%;
+    font-size: 1.45rem;
+    font-weight: 900;
 
     text-align: center;
 }
 
 .list-option-container {
     width: 100%;
-    margin-bottom: 2rem;
+    padding-bottom: 1.3rem;
+    padding-left: 4rem;
 
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .list-option {
+    padding-right: 1rem;
+
     font-size: 0.9rem;
     font-weight: 900;
-
-    gap: 0rem;
 
     display: flex;
     flex-wrap: wrap;
@@ -56,19 +58,6 @@
     position: absolute;
 }
 
-.gallery-button {
-    background: #ff111180;
-    color: #fff;
-
-    top: 40%;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 2rem;
-    z-index: 2;
-
-    border: none;
-    position: absolute;
-}
 
 .gallery-scroll {
     padding: 2%;
@@ -76,20 +65,23 @@
 
     overflow-x: auto;
     scroll-behavior: smooth;
-    
+
     display: flex;
 }
 
 .gallery-scroll::-webkit-scrollbar {
-    height: 3px;
     background-color: rgb(206, 206, 206);
+
+    height: 3px;
 }
 
 .gallery-scroll::-webkit-scrollbar-thumb {
+    background-color: #c4ce34;
+
     margin-top: 5%;
     padding-top: 5%;
+
     border-radius: 4px;
-    background-color: #c4ce34;
     width: 10%;
 }
 
@@ -102,19 +94,23 @@
 }
 
 .gallery-buttons-inline {
-    display: flex;
-    margin-right: 0%;
-    align-items: center;
     gap: 0.35rem;
+
+    display: flex;
+    align-items: center;
 }
 
 .gallery-single-button {
     background: #151515;
     color: #fff;
+
     border: none;
     border-radius: 5px;
+
     padding: 6px 11px;
+
     font-size: 0.65rem;
+
     cursor: pointer;
     transition: background 0.3s;
 }
@@ -124,77 +120,103 @@
 }
 
 .image-container {
+    background: #f5f5f5;
+
     width: 15rem;
     height: 14rem;
-    background: #f5f5f5;
     padding: 2rem;
+    margin-bottom: 1rem;
+
     border-radius: 10px;
-    flex-shrink: 0;
+
     display: flex;
+    flex-shrink: 0;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1rem;
 }
 
 .image-container img {
-    max-width: auto;
+    max-width: 20rem;
     max-height: 9rem;
     border-radius: 10px;
     object-fit: contain;
 }
 
 .image-container h3 {
-    margin-top: 10px;
-    font-size: 18px;
+    margin-top: 0.80rem;
+
+    font-size: 0.95rem;
     font-weight: bold;
 }
 
 .image-container p {
-    margin-top: 5px;
-    font-size: 14px;
     color: #262626;
+
+    margin-top: 0.25rem;
+    font-size: 0.80rem;
 }
 
 @media (min-width: 768px) {
-    .container-gallery-all {
-        width: 100%;
-
-    }
-
-    .title {
-        font-size: 1.5rem;
-    }
-
     .list-option-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 4rem;
-        padding-left: 7rem;
+        padding-bottom: 0.5rem;
+        padding-left: 8rem;
     }
 
     .list-option {
-        gap: 5px;
+        padding-right: 5rem;
     }
-
-    .container-gallery {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: row;
-    }
-
-    .gallery-scroll {
-        width: 40rem;
-        border-radius: 10px;
-    }
-
 }
 
 @media (min-width: 1024px) {
-    .container-gallery-all {
-        width: 100%;
+    .container-gallery {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .list-option-container {
+        padding-bottom: 0;
+        padding-left: 8rem;
+    }
+
+    .gallery-scroll {
+        border-radius: 10px;
+
+        width: 51rem;
+    }
+}
+
+@media (min-width: 1440px) {
+    .gallery-scroll {
+        width: 63rem;
+    }
+
+    .image-container {
+        width: 18rem;
+        height: 18rem;
+        padding: 0rem;
+        margin-bottom: 0rem;
+    }
+
+    .image-container img {
+        max-width: 20rem;
+        max-height: 12rem;
+        border-radius: 10px;
+        object-fit: contain;
+    }
+
+    .image-container h3 {
+        margin-top: 1rem;
+
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+    .image-container p {
+        color: #262626;
+
+        margin-top: 5px;
+        font-size: 0.80rem;
     }
 }
