@@ -1,16 +1,20 @@
 # Usa a imagem oficial do PHP com PHP-FPM
 FROM php:8.3-fpm
 
-# Instala pacotes básicos e dependências do Oracle Instant Client
+# Instala pacotes básicos, dependências do Oracle Instant Client e Node.js
 RUN apt-get update && apt-get install -y \
     unzip \
     curl \
     git \
+    gnupg \
     libaio1 \
     libonig-dev \
     libpng-dev \
     libjpeg-dev \
     libfreetype6-dev \
+    ca-certificates \
+    && curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
+    && apt-get install -y nodejs \
     && docker-php-ext-configure gd \
     && docker-php-ext-install gd pdo pdo_mysql
 
