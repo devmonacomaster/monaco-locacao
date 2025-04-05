@@ -69,7 +69,7 @@ function Gallery() {
                     ))}
                 </ul>
                 <div className="gallery-buttons-inline">
-                    <button
+                    <button 
                         onClick={() => scroll("left")}
                         className="gallery-single-button prev">&#10094;
                     </button>

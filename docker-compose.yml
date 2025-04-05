@@ -8,9 +8,11 @@ services:
         volumes:
             - .:/var/www/html
         ports:
-            - "5173:5173" # <-- 2 semanas pra decobrir que era só isso que faltava pra rodar 
+            - "5173:5173"
         networks:
             - laravel
+        depends_on:
+            - postgres
         command: >
             sh -c "chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache && php-fpm"
 
@@ -26,6 +28,24 @@ services:
             - app
         networks:
             - laravel
+
+    postgres:
+        image: postgres:15
+        container_name: laravel_postgres
+        restart: always
+        environment:
+            POSTGRES_DB: monaco
+            POSTGRES_USER: monaco_user
+            POSTGRES_PASSWORD: secret
+        volumes:
+            - postgres_data:/var/lib/postgresql/data
+        ports:
+            - "5432:5432"
+        networks:
+            - laravel
+
+volumes:
+    postgres_data:
 
 networks:
     laravel:
