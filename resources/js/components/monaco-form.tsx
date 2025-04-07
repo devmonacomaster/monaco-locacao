@@ -77,7 +77,7 @@ const ContactForm = () => {
 
     return (
         <div className="contact-form-container">
-            <div className="background-image"></div>
+            <img className="background-image" src="images/form_background.webp" alt="Background" />
             <div className="overlay"></div>
             <div className="contact-form-content">
                 <div className="form-title">

@@ -17,6 +17,7 @@
     display: flex;
     gap: 1rem;
     flex-direction: row;
+    padding-top: 1.5rem;
 }
 
 .footer-top-links {
