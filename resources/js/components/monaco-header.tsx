@@ -6,8 +6,23 @@ import MonacoLogo from "@/components/ui/icon-monaco-logo";
 import ArrowHeader from "@/components/ui/icon-arrow-header";
 import "./monaco-header.css";
 
-function MonacoHeader() {
+function MonacoHeader({
+    galleryRef,
+    aboutRef,
+    contactRef
+}: {
+    galleryRef: React.RefObject<HTMLDivElement | null>,
+    aboutRef: React.RefObject<HTMLDivElement | null>,
+    contactRef: React.RefObject<HTMLDivElement | null>
+}) {
     const [isOpen, setIsOpen] = useState(false);
+
+    const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>) => {
+        if (ref.current) {
+            ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
+            setIsOpen(false); // Fecha o menu ao clicar (se estiver aberto)
+        }
+    };
 
     return (
         <header className="header">
@@ -45,14 +60,19 @@ function MonacoHeader() {
                     </li>
 
                     <li>
-                        <a href={route("home")} className="nav-link">
+                        <button className="nav-link" onClick={() => scrollToSection(galleryRef)}>
                             Nossos Carros
-                        </a>
+                        </button>
                     </li>
                     <li>
-                        <a href={route("home")} className="nav-link">
+                        <button className="nav-link" onClick={() => scrollToSection(aboutRef)}>
                             Sobre a Mônaco Locação
-                        </a>
+                        </button>
+                    </li>
+                    <li>
+                        <button className="nav-link" onClick={() => scrollToSection(contactRef)}>
+                            Contato
+                        </button>
                     </li>
 
                     <li className="cta-container">

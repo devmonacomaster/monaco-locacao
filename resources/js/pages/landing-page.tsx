@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import MonacoHeader from "@/components/monaco-header";
 import Carousel from "@/components/ui/monaco-carousel";
 import SectionOne from "@/components/monaco-section-one";
@@ -14,16 +15,39 @@ const images = [
 ];
 
 function LandingPage() {
+    const galleryRef = useRef<HTMLDivElement>(null);
+    const aboutRef = useRef<HTMLDivElement>(null);
+    const contactRef = useRef<HTMLDivElement>(null);
+
     return (
         <>
-            <MonacoHeader />
+            <MonacoHeader
+                galleryRef={galleryRef}
+                aboutRef={aboutRef}
+                contactRef={contactRef}
+            />
+
             <Carousel images={images} />
+
             <SectionOne />
+            
             <SectionTwo />
-            <Gallery />
-            <AboutUs />
+
+            <div ref={galleryRef}>
+                <Gallery />
+            </div>
+
+            <div ref={aboutRef}>
+                <AboutUs />
+            </div>
+
             <ContactForm />
-            <Footer />
+
+            <div ref={contactRef}>
+                <Footer />
+            </div>
+
+
         </>
     );
 }
