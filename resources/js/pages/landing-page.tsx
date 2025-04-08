@@ -19,6 +19,7 @@ function LandingPage() {
     const aboutRef = useRef<HTMLDivElement>(null);
     const contactRef = useRef<HTMLDivElement>(null);
     const headerRef = useRef<HTMLDivElement>(null!);
+    const formRef = useRef<HTMLDivElement>(null!);
 
     return (
         <>
@@ -27,6 +28,7 @@ function LandingPage() {
                     galleryRef={galleryRef}
                     aboutRef={aboutRef}
                     contactRef={contactRef}
+                    formRef={formRef}
                 />
             </div>
 
@@ -44,11 +46,14 @@ function LandingPage() {
                 <AboutUs />
             </div>
 
-            <div ref={contactRef}>
+            <div ref={formRef}>
                 <ContactForm />
             </div>
 
-            <Footer headerRef={headerRef} />
+            <div ref={contactRef}>
+                <Footer headerRef={headerRef} />
+            </div>
+
         </>
     );
 }

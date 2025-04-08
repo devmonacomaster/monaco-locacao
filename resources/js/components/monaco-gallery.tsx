@@ -39,6 +39,9 @@ const carsDataWithAll: Record<Category, Vehicle[]> = {
 function Gallery() {
     const [selectedCategory, setSelectedCategory] = useState<Category>("todos");
     const scrollRef = useRef<HTMLDivElement>(null);
+    const isDragging = useRef(false);
+    const startX = useRef(0);
+    const scrollLeft = useRef(0);
 
     const filteredCars = carsDataWithAll[selectedCategory];
 
@@ -47,8 +50,31 @@ function Gallery() {
             const scrollAmount = 350;
             scrollRef.current.scrollBy({
                 left: direction === "left" ? -scrollAmount : scrollAmount,
-                behavior: "smooth",
+                behavior: "auto",
             });
+        }
+    };
+
+    // Função de início do arrasto
+    const handlePointerDown = (e: React.PointerEvent) => {
+        if (!scrollRef.current) return;
+        isDragging.current = true;
+        startX.current = e.clientX;
+        scrollLeft.current = scrollRef.current.scrollLeft;
+    };
+
+    // Função de movimento do arrasto
+    const handlePointerMove = (e: React.PointerEvent) => {
+        if (!isDragging.current || !scrollRef.current) return;
+        const dx = e.clientX - startX.current;
+        scrollRef.current.scrollLeft = scrollLeft.current - dx;
+    };
+
+    // Função de fim do arrasto
+    const handlePointerUp = () => {
+        isDragging.current = false;
+        if (scrollRef.current) {
+            scrollRef.current.style.scrollBehavior = "";
         }
     };
 
@@ -69,7 +95,7 @@ function Gallery() {
                     ))}
                 </ul>
                 <div className="gallery-buttons-inline">
-                    <button 
+                    <button
                         onClick={() => scroll("left")}
                         className="gallery-single-button prev">&#10094;
                     </button>
@@ -79,11 +105,20 @@ function Gallery() {
                     </button>
                 </div>
             </div>
+
             <div className="container-gallery">
-                <div className="gallery-scroll" ref={scrollRef}>
+                <div
+                    className="gallery-scroll"
+                    ref={scrollRef}
+                    onPointerDown={handlePointerDown}
+                    onPointerMove={handlePointerMove}
+                    onPointerUp={handlePointerUp}
+                    onPointerLeave={handlePointerUp}
+                    style={{ cursor: isDragging.current ? "grabbing" : "grab", userSelect: "none" }} // Impede seleção de texto
+                >
                     {filteredCars.map((car, index) => (
                         <div className="image-container" key={index}>
-                            <img src={car.image} alt={car.name} />
+                            <img src={car.image} alt={car.name} draggable="false" />
                             <h3>{car.name}</h3>
                             <p>{car.details}</p>
                         </div>
