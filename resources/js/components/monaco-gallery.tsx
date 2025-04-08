@@ -79,23 +79,29 @@ function Gallery() {
     return (
         <div className="container-gallery-all">
             <h1 className="title">Explore o nosso portfólio</h1>
-                <div className="list-option-container">
-                    <ul className="list-option">
-                        {Object.keys(carsDataWithAll).map((category) => (
-                            <li
-                                key={category}
-                                className={selectedCategory === category ? "active" : ""}
-                                onClick={() => setSelectedCategory(category as Category)}
-                            >
-                                {category.charAt(0).toUpperCase() + category.slice(1)}
-                            </li>
-                        ))}
-                    </ul>
-                    <div className="gallery-buttons-inline">
-                        <button onClick={() => scrollRef.current?.scrollBy({ left: -350, behavior: "smooth" })} className="gallery-single-button prev">&#10094;</button>
-                        <button onClick={() => scrollRef.current?.scrollBy({ left: 350, behavior: "smooth" })} className="gallery-single-button next">&#10095;</button>
-                    </div>
+            <div className="list-option-container">
+                <ul className="list-option">
+                    {Object.keys(carsDataWithAll).map((category) => (
+                        <li
+                            key={category}
+                            className={selectedCategory === category ? "active" : ""}
+                            onClick={() => setSelectedCategory(category as Category)}
+                        >
+                            {category.charAt(0).toUpperCase() + category.slice(1)}
+                        </li>
+                    ))}
+                </ul>
+                <div className="gallery-buttons-inline">
+                    <button
+                        onClick={() => scrollRef.current?.scrollBy({ left: -350, behavior: "smooth" })}
+                        className="gallery-single-button prev">&#10094;
+                    </button>
+                    <button
+                        onClick={() => scrollRef.current?.scrollBy({ left: 350, behavior: "smooth" })}
+                        className="gallery-single-button next">&#10095;
+                    </button>
                 </div>
+            </div>
             <div className="container-gallery">
                 <motion.div
                     className="gallery-scroll"
