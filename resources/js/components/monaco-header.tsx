@@ -9,18 +9,20 @@ import "./monaco-header.css";
 function MonacoHeader({
     galleryRef,
     aboutRef,
-    contactRef
+    contactRef,
+    formRef
 }: {
     galleryRef: React.RefObject<HTMLDivElement | null>,
     aboutRef: React.RefObject<HTMLDivElement | null>,
     contactRef: React.RefObject<HTMLDivElement | null>,
+    formRef: React.RefObject<HTMLDivElement | null>
 }) {
     const [isOpen, setIsOpen] = useState(false);
 
     const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>) => {
         if (ref.current) {
             ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
-            setIsOpen(false); 
+            setIsOpen(false);
         }
     };
 
@@ -76,10 +78,10 @@ function MonacoHeader({
                     </li>
 
                     <li className="cta-container">
-                        <a href={route("home")} className="cta">
-                            <span>RECEBA UMA PROPOSTA</span>
+                        <button className="cta" onClick={() => scrollToSection(formRef)}>
+                            <span>RECEBA UMA PROPOSTA </span>
                             <ArrowHeader className="arrow-icon" />
-                        </a>
+                        </button>
                     </li>
                 </ul>
             </nav>
