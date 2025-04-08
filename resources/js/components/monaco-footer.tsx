@@ -1,10 +1,22 @@
 import "./monaco-footer.css";
+import { RefObject } from "react";
 
-function Footer() {
+type FooterProps = {
+    headerRef: RefObject<HTMLDivElement>;
+};
+
+function Footer({ headerRef }: FooterProps) {
+
+    const scrollToTop = () => {
+        if (headerRef.current) {
+            headerRef.current.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
     return (
         <div className="footer-container">
             <div className="footer-top-links">
-                <h2>Voltar ao início {'\u02C4'}</h2>
+                <h2 onClick={scrollToTop} style={{ cursor: "pointer" }}>Voltar ao início {'\u02C4'}</h2>
                 <div className="footer-contact">
                     <h2 className="text-highlight">CONTATO</h2>
                     <h2><u>Fale Conosco</u></h2>

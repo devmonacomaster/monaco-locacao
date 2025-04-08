@@ -18,19 +18,22 @@ function LandingPage() {
     const galleryRef = useRef<HTMLDivElement>(null);
     const aboutRef = useRef<HTMLDivElement>(null);
     const contactRef = useRef<HTMLDivElement>(null);
+    const headerRef = useRef<HTMLDivElement>(null!);
 
     return (
         <>
-            <MonacoHeader
-                galleryRef={galleryRef}
-                aboutRef={aboutRef}
-                contactRef={contactRef}
-            />
+            <div ref={headerRef}>
+                <MonacoHeader
+                    galleryRef={galleryRef}
+                    aboutRef={aboutRef}
+                    contactRef={contactRef}
+                />
+            </div>
 
             <Carousel images={images} />
 
             <SectionOne />
-            
+
             <SectionTwo />
 
             <div ref={galleryRef}>
@@ -41,13 +44,11 @@ function LandingPage() {
                 <AboutUs />
             </div>
 
-            <ContactForm />
-
             <div ref={contactRef}>
-                <Footer />
+                <ContactForm />
             </div>
 
-
+            <Footer headerRef={headerRef} />
         </>
     );
 }

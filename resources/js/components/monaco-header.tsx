@@ -13,14 +13,14 @@ function MonacoHeader({
 }: {
     galleryRef: React.RefObject<HTMLDivElement | null>,
     aboutRef: React.RefObject<HTMLDivElement | null>,
-    contactRef: React.RefObject<HTMLDivElement | null>
+    contactRef: React.RefObject<HTMLDivElement | null>,
 }) {
     const [isOpen, setIsOpen] = useState(false);
 
     const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>) => {
         if (ref.current) {
             ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
-            setIsOpen(false); // Fecha o menu ao clicar (se estiver aberto)
+            setIsOpen(false); 
         }
     };
 
