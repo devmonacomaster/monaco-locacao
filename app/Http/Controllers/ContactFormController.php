@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Contact;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 
 class ContactFormController extends Controller
 {
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
+        // Validação dos dados
+        $validated = $request->validate([
             'nome' => 'required|string|max:255',
             'email' => 'required|email',
             'telefone' => 'nullable|string',
@@ -20,21 +20,18 @@ class ContactFormController extends Controller
             'contatoPreferido' => 'required|in:email,telefone',
         ]);
 
-        if ($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()], 422);
-        }
-
-        // Salva no banco
+        // Salva no banco de dados
         Contact::create([
-            'nome' => $request->nome,
-            'email' => $request->email,
-            'telefone' => $request->telefone,
-            'interesse' => $request->interesse,
-            'empresa' => $request->empresa,
-            'site' => $request->site,
-            'contato_preferido' => $request->contatoPreferido,
+            'nome' => $validated['nome'],
+            'email' => $validated['email'],
+            'telefone' => $validated['telefone'] ?? null,
+            'interesse' => $validated['interesse'] ?? null,
+            'empresa' => $validated['empresa'] ?? null,
+            'site' => $validated['site'] ?? null,
+            'contato_preferido' => $validated['contatoPreferido'],
         ]);
 
-        return response()->json(['message' => 'Formulário enviado e salvo com sucesso!'], 200);
+        // Retorna uma mensagem de sucesso para o Inertia.js
+        return redirect()->back()->with('success', 'Formulário enviado com sucesso!');
     }
 }

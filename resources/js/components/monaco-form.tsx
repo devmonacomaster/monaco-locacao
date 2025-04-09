@@ -1,22 +1,16 @@
-import { useState } from "react";
 import "./monaco-form.css";
+import { useForm, usePage } from "@inertiajs/react";
 
-interface FormDataState {
-    nome: string;
-    email: string;
-    telefone: string;
-    interesse: string;
-    empresa: string;
-    site: string;
-    contatoPreferido: "email" | "telefone";
-}
-
-interface FormErrors {
-    [key: string]: string[];
+interface CustomPageProps extends Record<string, unknown> {
+    flash?: {
+        success?: string;
+    };
 }
 
 const ContactForm = () => {
-    const [formData, setFormData] = useState<FormDataState>({
+    const { flash } = usePage<CustomPageProps>().props; // Agora está tipado corretamente
+
+    const { data, setData, post, processing, errors, reset } = useForm({
         nome: "",
         email: "",
         telefone: "",
@@ -26,53 +20,11 @@ const ContactForm = () => {
         contatoPreferido: "email",
     });
 
-    const [errors, setErrors] = useState<FormErrors>({});
-    const [loading, setLoading] = useState(false);
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
-
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        setLoading(true);
-        setErrors({});
-
-        try {
-            const response = await fetch("http://localhost:8000/api/contact", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Accept": "application/json",
-                },
-                body: JSON.stringify(formData),
-            });
-
-            const data = await response.json();
-
-            if (!response.ok) {
-                setErrors(data.errors || {});
-                alert("Erro ao enviar formulário!");
-                return;
-            }
-
-            alert("Formulário enviado com sucesso!");
-            setFormData({
-                nome: "",
-                email: "",
-                telefone: "",
-                interesse: "",
-                empresa: "",
-                site: "",
-                contatoPreferido: "email",
-            });
-
-        } catch (error) {
-            console.error("Erro ao enviar formulário:", error);
-            alert("Erro ao enviar o formulário. Tente novamente.");
-        } finally {
-            setLoading(false);
-        }
+        post(route("contact.store"), {
+            onSuccess: () => reset(), // Reseta o formulário ao enviar com sucesso
+        });
     };
 
     return (
@@ -80,41 +32,43 @@ const ContactForm = () => {
             <img className="background-image" src="images/form_background.webp" alt="Background" />
             <div className="overlay"></div>
             <div className="contact-form-content">
-                <div className="form-title">
-                    <h2>Como podemos lhe atender?</h2>
-                </div>
+                <h2 className="form-title">Como podemos lhe atender?</h2>
                 <p className="form-subtitle">Deixe seus dados que iremos entrar em contato</p>
 
+                {/* Exibir mensagem de sucesso */}
+                {flash?.success && <p className="success-message">{flash.success}</p>}
+
                 <form onSubmit={handleSubmit} className="contact-form">
-                    <input type="text" name="nome" value={formData.nome} onChange={handleChange} required placeholder="Nome" />
-                    {errors.nome && <p className="error">{errors.nome[0]}</p>}
+                    <input type="text" name="nome" value={data.nome} onChange={(e) => setData("nome", e.target.value)} placeholder="Nome" />
+                    {errors.nome && <p className="error">{errors.nome}</p>}
 
-                    <input type="email" name="email" value={formData.email} onChange={handleChange} required placeholder="Email" />
-                    {errors.email && <p className="error">{errors.email[0]}</p>}
+                    <input type="email" name="email" value={data.email} onChange={(e) => setData("email", e.target.value)} placeholder="Email" />
+                    {errors.email && <p className="error">{errors.email}</p>}
 
-                    <input type="tel" name="telefone" value={formData.telefone} onChange={handleChange} placeholder="Número de telefone" />
-                    {errors.telefone && <p className="error">{errors.telefone[0]}</p>}
+                    <input type="tel" name="telefone" value={data.telefone} onChange={(e) => setData("telefone", e.target.value)} placeholder="Número de telefone" />
+                    {errors.telefone && <p className="error">{errors.telefone}</p>}
 
-                    <input type="text" name="interesse" value={formData.interesse} onChange={handleChange} placeholder="Seu interesse" />
-                    {errors.interesse && <p className="error">{errors.interesse[0]}</p>}
+                    <input type="text" name="interesse" value={data.interesse} onChange={(e) => setData("interesse", e.target.value)} placeholder="Seu interesse" />
+                    {errors.interesse && <p className="error">{errors.interesse}</p>}
 
-                    <input type="text" name="empresa" value={formData.empresa} onChange={handleChange} placeholder="Nome da empresa" />
-                    {errors.empresa && <p className="error">{errors.empresa[0]}</p>}
+                    <input type="text" name="empresa" value={data.empresa} onChange={(e) => setData("empresa", e.target.value)} placeholder="Nome da empresa" />
+                    {errors.empresa && <p className="error">{errors.empresa}</p>}
 
-                    <input type="url" name="site" value={formData.site} onChange={handleChange} placeholder="Site" />
-                    {errors.site && <p className="error">{errors.site[0]}</p>}
+                    <input type="url" name="site" value={data.site} onChange={(e) => setData("site", e.target.value)} placeholder="Site" />
+                    {errors.site && <p className="error">{errors.site}</p>}
+
                     <h1 className="form-subtitle">Você prefere ligação ou email?</h1>
-                    <select name="contatoPreferido" value={formData.contatoPreferido} onChange={handleChange}>
+                    <select name="contatoPreferido" value={data.contatoPreferido} onChange={(e) => setData("contatoPreferido", e.target.value)}>
                         <option value="email">Email</option>
                         <option value="telefone">Telefone</option>
                     </select>
-                    <button type="submit" className="submit-button" disabled={loading}>
-                        {loading ? "Enviando..." : "Receba uma proposta \u27F6"}
+
+                    <button type="submit" className="submit-button" disabled={processing}>
+                        {processing ? "Enviando..." : "Receba uma proposta \u27F6"}
                     </button>
                 </form>
             </div>
         </div>
-
     );
 };
 

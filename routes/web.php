@@ -4,21 +4,26 @@ use App\Http\Controllers\ContactFormController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+// Rota da Landing Page
 Route::get('/', function () {
-    return Inertia::render('landing-page');
+    return Inertia::render('LandingPage');
 })->name('home');
 
+// Rota de Boas-Vindas
 Route::get('/welcome', function () {
-    return Inertia::render('welcome');
+    return Inertia::render('Welcome');
 })->name('welcome');
 
+// Rota para envio do formulário de contato
+Route::post('/contact', [ContactFormController::class, 'store'])->name('contact.store');
+
+// Rotas protegidas por autenticação
 Route::middleware(['auth', 'verified'])->group(function () {
-
-    Route::get('dashboard', function () {
-        return Inertia::render('dashboard');
+    Route::get('/dashboard', function () {
+        return Inertia::render('Dashboard');
     })->name('dashboard');
-
 });
 
+// Importa outras configurações de rotas
 require __DIR__ . '/settings.php';
 require __DIR__ . '/auth.php';
