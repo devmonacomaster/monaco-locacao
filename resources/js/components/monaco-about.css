@@ -7,7 +7,7 @@
         height: auto;
         align-items: center;
         overflow: hidden;
-        padding-bottom: 2rem;
+        padding-bottom: 1rem;
     }
 
     .image-about-us {
@@ -19,7 +19,7 @@
 
     .title-about-us {
         font-size: 1.20rem;
-        font-weight: 700;
+        font-weight: 600;
         padding-top: 2.50rem;
         padding-bottom: 2rem;
     }
@@ -57,13 +57,13 @@
         cursor: pointer;
         transition: background 0.3s ease;
         border-radius: 5px;
-        font-weight: 900;
+        font-weight: 600;
     }
 
     .button-container {
         display: flex;
         justify-content: center;
-        padding-top: 2rem;
+        padding-top: 1rem;
     }
 
     .about-us-content {
@@ -93,7 +93,7 @@
             justify-content: space-around;
             align-items: center;
             gap: 1rem;
-            width: 90%;
+            width: 85rem;
         }
 
         .section-about-1 {
@@ -116,7 +116,7 @@
         }
 
         .about-h2 {
-            font-weight: 900;
+            font-weight: 700;
             /* margin-bottom: 0.50rem; */
             justify-content: left;
         }
