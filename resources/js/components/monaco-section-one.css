@@ -24,7 +24,7 @@
     padding: 0.50rem;
 
     font-size: 1rem;
-    font-weight: 900;
+    font-weight: 700;
 
     display: flex;
     justify-content: center;
@@ -109,7 +109,7 @@
 
     .section-item-one {
         font-size: 1rem;
-        font-weight: 900;
+        font-weight: 700;
     }
 
     .section-list {

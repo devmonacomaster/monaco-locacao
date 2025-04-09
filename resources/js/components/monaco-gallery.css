@@ -13,7 +13,7 @@
     padding-bottom: 0.70rem;
 
     font-size: 1.45rem;
-    font-weight: 900;
+    font-weight: 700;
 
     text-align: center;
 }
@@ -31,7 +31,7 @@
     padding-right: 1rem;
 
     font-size: 0.9rem;
-    font-weight: 900;
+    font-weight: 500;
 
     display: flex;
     flex-wrap: wrap;
@@ -167,7 +167,7 @@
     margin-top: 0.80rem;
 
     font-size: 0.95rem;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .image-container p {
@@ -230,7 +230,7 @@
         margin-top: 1rem;
 
         font-size: 1rem;
-        font-weight: bold;
+        font-weight: 700;
     }
 
     .image-container p {
