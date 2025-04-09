@@ -9,18 +9,18 @@ Route::get('/', function () {
     return Inertia::render('LandingPage');
 })->name('home');
 
-// Rota de Boas-Vindas
+
 Route::get('/welcome', function () {
-    return Inertia::render('Welcome');
+    return Inertia::render('welcome');
 })->name('welcome');
 
-// Rota para envio do formulário de contato
+
 Route::post('/contact', [ContactFormController::class, 'store'])->name('contact.store');
 
 // Rotas protegidas por autenticação
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function () {
-        return Inertia::render('Dashboard');
+        return Inertia::render('dashboard');
     })->name('dashboard');
 });
 
