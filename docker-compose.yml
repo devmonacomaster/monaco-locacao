@@ -1,4 +1,4 @@
-#version: '3.8'
+# version: '3.8'
 services:
     app:
         build:
@@ -13,6 +13,10 @@ services:
             - laravel
         depends_on:
             - postgres
+        user: "${UID}:${GID}" # Usando o UID e GID
+        environment:
+            UID: ${UID}
+            GID: ${GID}
         command: >
             sh -c "chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache && php-fpm"
 
@@ -46,6 +50,7 @@ services:
 
 volumes:
     postgres_data:
+
 
 networks:
     laravel:
