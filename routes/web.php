@@ -15,9 +15,6 @@ Route::get('/welcome', function () {
     return Inertia::render('Welcome');
 })->name('welcome');
 
-// Rota do Dashboard com os contatos (sem autenticação)
-Route::get('/dashboard', [ContactController::class, 'index'])->name('dashboard');
-
 // API de contatos (opcional, caso queira buscar via React com fetch)
 Route::get('/api/contacts', [ContactController::class, 'apiIndex'])->name('api.contacts');
 
@@ -26,9 +23,9 @@ Route::post('/contact', [ContactFormController::class, 'store'])->name('contact.
 
 // Rotas protegidas por autenticação
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/dashboard/protected', function () {
-        return Inertia::render('DashboardProtected');
-    })->name('dashboard.protected');
+    Route::get('/dashboard', function () {
+        return Inertia::render('dashboard');
+    })->name('dashboard');
 });
 
 // Importa outras configurações de rotas
