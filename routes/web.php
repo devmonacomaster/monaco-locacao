@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactFormController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -9,19 +10,25 @@ Route::get('/', function () {
     return Inertia::render('LandingPage');
 })->name('home');
 
-
+// Rota de teste de boas-vindas
 Route::get('/welcome', function () {
-    return Inertia::render('welcome');
+    return Inertia::render('Welcome');
 })->name('welcome');
 
+// Rota do Dashboard com os contatos (sem autenticação)
+Route::get('/dashboard', [ContactController::class, 'index'])->name('dashboard');
 
+// API de contatos (opcional, caso queira buscar via React com fetch)
+Route::get('/api/contacts', [ContactController::class, 'apiIndex'])->name('api.contacts');
+
+// Rota para envio de formulário de contato
 Route::post('/contact', [ContactFormController::class, 'store'])->name('contact.store');
 
 // Rotas protegidas por autenticação
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/dashboard', function () {
-        return Inertia::render('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard/protected', function () {
+        return Inertia::render('DashboardProtected');
+    })->name('dashboard.protected');
 });
 
 // Importa outras configurações de rotas
