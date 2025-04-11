@@ -50,6 +50,7 @@ const ContactForm = () => {
 
                 <form onSubmit={handleSubmit} className="contact-form">
                     <input
+                        className="form-input"
                         type="text"
                         name="nome"
                         value={data.nome}
@@ -57,6 +58,7 @@ const ContactForm = () => {
                     {errors.nome && <p className="error">{errors.nome}</p>}
 
                     <input
+                        className="form-input"
                         type="email"
                         name="email"
                         value={data.email}
@@ -65,6 +67,7 @@ const ContactForm = () => {
                     {errors.email && <p className="error">{errors.email}</p>}
 
                     <input
+                        className="form-input"
                         type="tel"
                         name="telefone"
                         value={data.telefone}
@@ -73,6 +76,7 @@ const ContactForm = () => {
                     {errors.telefone && <p className="error">{errors.telefone}</p>}
 
                     <input
+                        className="form-input"
                         type="text"
                         name="interesse"
                         value={data.interesse}
@@ -81,6 +85,7 @@ const ContactForm = () => {
                     {errors.interesse && <p className="error">{errors.interesse}</p>}
 
                     <input
+                        className="form-input"
                         type="text"
                         name="empresa"
                         value={data.empresa}
@@ -89,6 +94,7 @@ const ContactForm = () => {
                     {errors.empresa && <p className="error">{errors.empresa}</p>}
 
                     <input
+                        className="form-input"
                         type="url"
                         name="site"
                         value={data.site}
