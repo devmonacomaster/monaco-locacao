@@ -39,18 +39,18 @@
     @vite(['resources/js/app.tsx', "resources/js/pages/{$page['component']}.tsx"])
     @inertiaHead
 
-    {{-- Google Analytics --}}
-    {{-- Remova o @env se quiser testar em localhost --}}
-    {{-- @env('production') --}}
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-9S0M1P5PQX"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-9S0M1P5PQX');
-        </script>
-    {{-- @endenv --}}
+    @env('production')
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9S0M1P5PQX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-9S0M1P5PQX');
+    </script>
+    @endenv
 </head>
 
 <body class="font-sans antialiased">

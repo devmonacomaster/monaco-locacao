@@ -7,7 +7,6 @@ import Gallery from "@/components/monaco-gallery";
 import AboutUs from "@/components/monaco-about";
 import ContactForm from "@/components/monaco-form";
 import Footer from "@/components/monaco-footer";
-import VehicleForm from "@/components/monaco-vehicle-form";
 
 const images = [
     '/images/banner-1.webp',
@@ -36,7 +35,6 @@ export default function LandingPage( { vehicles }: Props) {
 
     return (
         <>
-        <VehicleForm />
             <div ref={headerRef}>
                 <MonacoHeader
                     galleryRef={galleryRef}
