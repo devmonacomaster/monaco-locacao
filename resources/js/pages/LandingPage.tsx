@@ -7,6 +7,7 @@ import Gallery from "@/components/monaco-gallery";
 import AboutUs from "@/components/monaco-about";
 import ContactForm from "@/components/monaco-form";
 import Footer from "@/components/monaco-footer";
+import VehicleForm from "@/components/monaco-vehicle-form";
 
 const images = [
     '/images/banner-1.webp',
@@ -14,7 +15,19 @@ const images = [
     '/images/banner-3.webp',
 ];
 
-function LandingPage() {
+type Vehicle = {
+    id: number;
+    name: string;
+    image_path: string;
+    details: string;
+    type: "veiculo" | "caminhao";
+};
+
+type Props = {
+    vehicles?: Vehicle[]; // também como opcional, por segurança
+};
+
+export default function LandingPage( { vehicles }: Props) {
     const galleryRef = useRef<HTMLDivElement>(null);
     const aboutRef = useRef<HTMLDivElement>(null);
     const contactRef = useRef<HTMLDivElement>(null);
@@ -23,6 +36,7 @@ function LandingPage() {
 
     return (
         <>
+        <VehicleForm />
             <div ref={headerRef}>
                 <MonacoHeader
                     galleryRef={galleryRef}
@@ -39,7 +53,7 @@ function LandingPage() {
             <SectionTwo />
 
             <div ref={galleryRef}>
-                <Gallery />
+                <Gallery vehicles={vehicles}  />
             </div>
 
             <div ref={aboutRef}>
@@ -58,4 +72,3 @@ function LandingPage() {
     );
 }
 
-export default LandingPage;

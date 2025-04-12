@@ -4,6 +4,10 @@ use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\VehicleController;
+
+Route::get('/gallery', [VehicleController::class, 'index']);
+Route::post('/vehicles', [VehicleController::class, 'store']);
 
 // Rota da Landing Page
 Route::get('/', function () {
@@ -12,7 +16,7 @@ Route::get('/', function () {
 
 // Rota de teste de boas-vindas
 Route::get('/welcome', function () {
-    return Inertia::render('Welcome');
+    return Inertia::render('welcome');
 })->name('welcome');
 
 // API de contatos (opcional, caso queira buscar via React com fetch)
