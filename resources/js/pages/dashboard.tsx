@@ -2,6 +2,7 @@ import { PlaceholderPattern } from '@/components/ui/starter-kit/placeholder-patt
 import AppLayout from '@/layouts/app-layout';
 import { type BreadcrumbItem } from '@/types';
 import { Head } from '@inertiajs/react';
+import VehicleGallery from "@/components/monaco-vehicle-gallery";
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -27,7 +28,7 @@ export default function Dashboard() {
                     </div>
                 </div>
                 <div className="border-sidebar-border/70 dark:border-sidebar-border relative min-h-[100vh] flex-1 overflow-hidden rounded-xl border md:min-h-min">
-                    <PlaceholderPattern className="absolute inset-0 size-full stroke-neutral-900/20 dark:stroke-neutral-100/20" />
+                <VehicleGallery />
                 </div>
             </div>
         </AppLayout>
