@@ -4,11 +4,6 @@ use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\VehicleController;
-
-Route::get('/vehicles', [VehicleController::class, 'index']);
-Route::post('/vehicles', [VehicleController::class, 'store']);
-Route::delete('/vehicles/{id}', [VehicleController::class, 'destroy']);
 
 // Rota da Landing Page
 Route::get('/', function () {
