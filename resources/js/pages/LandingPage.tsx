@@ -14,7 +14,19 @@ const images = [
     '/images/banner-3.webp',
 ];
 
-function LandingPage() {
+type Vehicle = {
+    id: number;
+    name: string;
+    image_path: string;
+    details: string;
+    type: "veiculo" | "caminhao";
+};
+
+type Props = {
+    vehicles?: Vehicle[]; // também como opcional, por segurança
+};
+
+export default function LandingPage( { vehicles }: Props) {
     const galleryRef = useRef<HTMLDivElement>(null);
     const aboutRef = useRef<HTMLDivElement>(null);
     const contactRef = useRef<HTMLDivElement>(null);
@@ -39,7 +51,7 @@ function LandingPage() {
             <SectionTwo />
 
             <div ref={galleryRef}>
-                <Gallery />
+                <Gallery vehicles={vehicles}  />
             </div>
 
             <div ref={aboutRef}>
@@ -58,4 +70,3 @@ function LandingPage() {
     );
 }
 
-export default LandingPage;
