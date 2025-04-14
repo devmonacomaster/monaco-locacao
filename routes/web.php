@@ -11,9 +11,9 @@ Route::get('/', function () {
 })->name('home');
 
 // Rota de teste de boas-vindas
-Route::get('/welcome', function () {
-    return Inertia::render('Welcome');
-})->name('welcome');
+/* Route::get('/welcome', function () {
+    return Inertia::render('Welcome'); 
+})->name('welcome'); */
 
 // API de contatos (opcional, caso queira buscar via React com fetch)
 Route::get('/api/contacts', [ContactController::class, 'apiIndex'])->name('api.contacts');
@@ -22,11 +22,11 @@ Route::get('/api/contacts', [ContactController::class, 'apiIndex'])->name('api.c
 Route::post('/contact', [ContactFormController::class, 'store'])->name('contact.store');
 
 // Rotas protegidas por autenticação
-Route::middleware(['auth', 'verified'])->group(function () {
+/* Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function () {
         return Inertia::render('dashboard');
     })->name('dashboard');
-});
+}); */
 
 // Importa outras configurações de rotas
 require __DIR__ . '/settings.php';
