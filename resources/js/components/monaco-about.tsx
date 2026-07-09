@@ -3,11 +3,11 @@ import "./monaco-about.css";
 function AboutUs() {
     return (
         <section className="container-about-us">
-            <h1 className="title-about-us">Por que escolher a Mônaco Locação?</h1>
+            <h1 className="title-about-us">Por que escolher a GID Locação?</h1>
 
             <img
                 src="/images/banner_justify.webp"
-                alt="Banner da Mônaco Locação"
+                alt="Banner da GID Locação"
                 className="image-about-us"
             />
 
@@ -40,8 +40,8 @@ function AboutUs() {
 
             <div className="button-container">
                 <button className="button-about-us"
-                    aria-label="Saiba mais sobre a Mônaco Locação">
-                    Saiba mais sobre a Mônaco Locação
+                    aria-label="Saiba mais sobre a GID Locação">
+                    Saiba mais sobre a GID Locação
                 </button>
             </div>
         </section>

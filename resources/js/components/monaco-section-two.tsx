@@ -5,7 +5,7 @@ function SectionTwo() {
         <article className="section-two">
                 <div className="section-two-text">
                     <h3>
-                        A Mônaco Locação facilita o seu trajeto com eficiência e
+                        A GID Locação facilita o seu trajeto com eficiência e
                         confiança, movendo o futuro e trazendo mobilidade de maneira
                         fácil e eficaz.
                     </h3>

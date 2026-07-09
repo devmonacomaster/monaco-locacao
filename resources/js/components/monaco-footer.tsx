@@ -64,7 +64,7 @@ function Footer({ headerRef }: FooterProps) {
                 <p>Ofertas</p>
             </div>
             <div className="copyright">
-                <p>Copyright © 2025 Mônaco Locação.</p>
+                <p>Copyright © 2025 GID Locação.</p>
             </div>
         </div>
     );

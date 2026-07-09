@@ -68,7 +68,7 @@ function MonacoHeader({
                     </li>
                     <li>
                         <button className="nav-link" onClick={() => scrollToSection(aboutRef)}>
-                            Sobre a Mônaco Locação
+                            Sobre a GID Locação
                         </button>
                     </li>
                     <li>
