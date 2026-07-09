@@ -27,7 +27,7 @@ function Footer({ headerRef }: FooterProps) {
             </div>
             <div className="social-media">
                 <a
-                    href="https://www.facebook.com/GrupoMonacoOficial/?locale=pt_BR"
+                    href="https://www.facebook.com/people/GID-Loca%C3%A7%C3%A3o/61566588365656/?locale=pt_BR"
                     aria-label="Facebook"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -44,7 +44,7 @@ function Footer({ headerRef }: FooterProps) {
                     </svg>
                 </a>
                 <a
-                    href="https://www.instagram.com/monacolocacao/"
+                    href="https://www.instagram.com/gidlocacao/"
                     aria-label="Instagram"
                     target="_blank"
                     rel="noopener noreferrer"
