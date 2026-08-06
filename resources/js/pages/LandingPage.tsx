@@ -9,7 +9,7 @@ import ContactForm from "@/components/monaco-form";
 import Footer from "@/components/monaco-footer";
 
 const images = [
-    { src: '/images/promo/leo_chaves_new.jpg', href: 'https://www.grupomonaco.com.br/promocoes' },
+    { src: '/images/promo/leo_chaves_new_2.jpg', href: 'https://www.grupomonaco.com.br/promocoes' },
     { src: '/images/raw/BANNER.jpg' },
 ];
 
@@ -25,7 +25,7 @@ type Props = {
     vehicles?: Vehicle[]; // também como opcional, por segurança
 };
 
-export default function LandingPage( { vehicles }: Props) {
+export default function LandingPage({ vehicles }: Props) {
     const galleryRef = useRef<HTMLDivElement>(null);
     const aboutRef = useRef<HTMLDivElement>(null);
     const contactRef = useRef<HTMLDivElement>(null);
@@ -50,7 +50,7 @@ export default function LandingPage( { vehicles }: Props) {
             <SectionTwo />
 
             <div ref={galleryRef}>
-                <Gallery vehicles={vehicles}  />
+                <Gallery vehicles={vehicles} />
             </div>
 
             <div ref={aboutRef}>
