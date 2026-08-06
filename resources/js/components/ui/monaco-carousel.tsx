@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import './monaco-carousel.css';
 
+interface CarouselSlide {
+  src: string;
+  href?: string;
+}
+
 interface CarouselProps {
-  images: string[];
+  images: CarouselSlide[];
 }
 
 const Carousel: React.FC<CarouselProps> = ({ images }) => {
@@ -20,13 +25,24 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
     );
   };
 
+  const current = images[currentIndex];
+  const slideImage = (
+    <img
+      src={current.src}
+      alt={`Slide ${currentIndex}`}
+      className="carousel-image"
+    />
+  );
+
   return (
     <div className="carousel">
-      <img
-        src={images[currentIndex]}
-        alt={`Slide ${currentIndex}`}
-        className="carousel-image"
-      />
+      {current.href ? (
+        <a href={current.href} className="carousel-link">
+          {slideImage}
+        </a>
+      ) : (
+        slideImage
+      )}
 
       {/* Botão Anterior */}
       <button onClick={prevSlide} className="carousel-button prev">

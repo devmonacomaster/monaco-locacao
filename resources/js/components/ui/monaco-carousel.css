@@ -4,6 +4,10 @@
     overflow: hidden;
 }
 
+.carousel-link {
+    display: block;
+}
+
 .carousel-image {
     display: block;
     width: 100%;

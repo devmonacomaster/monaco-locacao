@@ -9,8 +9,8 @@ import ContactForm from "@/components/monaco-form";
 import Footer from "@/components/monaco-footer";
 
 const images = [
-    '/images/raw/BANNER.jpg',
-    '/images/promo/leo_chaves_new.jpg',
+    { src: '/images/promo/leo_chaves_new.jpg', href: 'https://www.grupomonaco.com.br/promocoes' },
+    { src: '/images/raw/BANNER.jpg' },
 ];
 
 type Vehicle = {
