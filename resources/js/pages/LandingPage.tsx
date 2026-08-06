@@ -10,7 +10,7 @@ import Footer from "@/components/monaco-footer";
 
 const images = [
     '/images/raw/BANNER.jpg',
-    '/images/promo/leo_chaves.jpg',
+    '/images/promo/leo_chaves_new.jpg',
 ];
 
 type Vehicle = {

@@ -1,14 +1,14 @@
 .carousel {
     position: relative;
     width: 100%;
-    height: 24rem;
     overflow: hidden;
 }
 
 .carousel-image {
+    display: block;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
     transition: opacity 0.5s ease-in-out;
 }
 
@@ -63,8 +63,4 @@
 
 @media (min-width: 628px) and (max-width: 992px) {}
 
-@media (min-width: 0px) and (max-width: 628px) {
-    .carousel {
-        height: 15rem;
-    }
-}
+@media (min-width: 0px) and (max-width: 628px) {}
