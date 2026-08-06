@@ -111,7 +111,7 @@ export default function Gallery({ vehicles = [] }: Props) {
                     {filteredVehicles.map((car) => (
                         <div className="image-container" key={car.id}>
                             <img
-                                src={`/storage/${car.image_path}`}
+                                src={car.image_path}
                                 alt={car.name}
                                 draggable="false"
                             />

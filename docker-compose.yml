@@ -5,13 +5,14 @@ services:
             dockerfile: Dockerfile
         container_name: monaco-locacao
         restart: unless-stopped
+        env_file:
+            - .env
         environment:
             APP_ENV: production
             APP_DEBUG: "false"
             LOG_CHANNEL: stderr
-        networks:
-            - coolify
+        volumes:
+            - vehicle-storage:/var/www/html/storage/app/public
 
-networks:
-    coolify:
-        external: true
+volumes:
+    vehicle-storage:

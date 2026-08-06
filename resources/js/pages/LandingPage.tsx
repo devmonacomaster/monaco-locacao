@@ -9,9 +9,8 @@ import ContactForm from "@/components/monaco-form";
 import Footer from "@/components/monaco-footer";
 
 const images = [
-    '/images/banner-1.webp',
-    '/images/banner-2.webp',
-    '/images/banner-3.webp',
+    '/images/raw/BANNER.jpg',
+    '/images/promo/leo_chaves.jpg',
 ];
 
 type Vehicle = {

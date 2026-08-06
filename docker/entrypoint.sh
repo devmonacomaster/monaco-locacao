@@ -10,6 +10,11 @@ mkdir -p storage/framework/cache
 mkdir -p storage/logs
 chmod -R 775 storage bootstrap/cache
 
+# Garante o link simbólico public/storage -> storage/app/public
+if [ ! -L public/storage ]; then
+    php artisan storage:link
+fi
+
 # Caches do Laravel para produção
 php artisan config:cache
 php artisan route:cache
