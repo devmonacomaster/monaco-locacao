@@ -9,7 +9,6 @@ import ContactForm from "@/components/monaco-form";
 import Footer from "@/components/monaco-footer";
 
 const images = [
-    { src: '/images/promo/leo_chaves_new_2.jpg', href: 'https://www.grupomonaco.com.br/promocoes' },
     { src: '/images/raw/BANNER.jpg' },
 ];
 
